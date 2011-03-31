@@ -1,0 +1,22 @@
+body {
+  padding: 5px;
+}
+
+body, p, ol, ul, td, th {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 10px;
+}
+
+#header, #menu, .dont-print, a, .dataTables_filter {
+  display: none;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+}

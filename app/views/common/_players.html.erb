@@ -1,0 +1,38 @@
+<table cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Birthdate</th>
+      <th>Age</th>
+      <th>Parents</th>
+      <th>Phone</th>
+      <th>Alternate Phone</th>
+      <th>Shirt Size</th>
+      <th class="dont-print">Division</th>
+      <th>Team</th>
+      <th class="dont-print"></th>
+      <th class="dont-print"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% players.each do |player| %>
+      <tr data-update-url="<%= admin_player_path(player) %>" class="<%= cycle("even", "odd") %>">
+        <td><%= editable("player[first_name]", player.first_name) %></td>
+        <td><%= editable("player[last_name]", player.last_name) %></td>
+        <td><%= editable("player[birthdate]", format_birthdate(player.birthdate)) %></td>
+        <td><%= player.age %></td>
+        <td><%= editable("player[parents]", player.parents) %></td>
+        <td><%= editable("player[phone_number]", player.phone_number) %></td>
+        <td><%= editable("player[alternate_phone_number]", player.alternate_phone_number) %></td>
+        <td><%= player.shirt_size %></td>
+        <td class="dont-print"><%= player.division_name %></td>
+        <td><%= player.team_name %></td>
+        <td class="dont-print"><%= link_to 'Edit', edit_admin_player_path(player) %></td>
+        <td class="dont-print"><%= link_to 'Delete', admin_player_path(player), :confirm => "Are you sure?", :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<p>Total: <%= players.length %></p>

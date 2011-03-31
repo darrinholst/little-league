@@ -1,0 +1,27 @@
+<% @page_javascript = ["admin-coaches.js", "admin-players.js"] %>
+
+<p>
+  <b>Division: </b><%= @team.division.name %>
+</p>
+<p>
+  <b>Name: </b><%= @team.name %>
+</p>
+
+<h4>Coaches</h4>
+<div class="coaches">
+  <%= render :partial => "common/coaches", :locals => {:coaches => @team.coaches} %>
+</div>
+
+<br>
+
+<h4>Players</h4>
+<div class="players">
+  <%= render :partial => "common/players", :locals => {:players => @team.players} %>
+</div>
+
+<br>
+
+<div class="dont-print">
+  <%= link_to 'Edit', edit_admin_team_path(@team) %> |
+  <%= link_to 'Back', admin_teams_path %>
+</div>

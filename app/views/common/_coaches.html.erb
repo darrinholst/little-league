@@ -1,0 +1,29 @@
+<table cellspacing="0" cellpadding="0">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th class="dont-print">Division</th>
+      <th class="dont-print">Team</th>
+      <th class="dont-print"></th>
+      <th class="dont-print"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% coaches.each do |coach| %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= coach.first_name %></td>
+        <td><%= coach.last_name %></td>
+        <td><%= coach.phone_number %></td>
+        <td><%= coach.email_address %></td>
+        <td class="dont-print"><%= coach.division_name %></td>
+        <td class="dont-print"><%= coach.team_name %></td>
+        <td class="dont-print"><%= link_to 'Edit', edit_admin_coach_path(coach) %></td>
+        <td class="dont-print"><%= link_to 'Delete', admin_coach_path(coach), :confirm => "Are you sure?", :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

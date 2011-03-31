@@ -1,0 +1,8 @@
+<% @page_javascript = "admin-coaches.js" %>
+
+<div class="coaches">
+  <%= render :partial => "common/coaches", :locals => {:coaches => @coaches} %>
+  <p>
+  <%= link_to 'Add New Coach', new_admin_coach_path %>
+  </p>
+</div>

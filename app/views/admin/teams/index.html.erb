@@ -1,0 +1,19 @@
+<ul>
+  <% current_division = nil %>
+
+  <% @teams.each do |team| %>
+    <% if current_division.nil? || !current_division.eql?(team.division.name) %>
+      <% current_division = team.division.name %>
+      <h4><%= current_division %></h4>
+    <% end %>
+
+    <li><%= link_to team.name, admin_team_path(team) %></li>
+  <% end %>
+</ul>
+
+<hr>
+
+<p>
+  <%= link_to 'New Team', new_admin_team_path %>
+</p>
+

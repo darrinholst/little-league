@@ -1,0 +1,149 @@
+body {
+  background-color: #fff;
+  color: #333;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+body, p, ol, ul, td, th {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: .9em;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+}
+a:visited {
+  color: #222;
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+#header {
+  margin-bottom: 30px;
+  height: 48px;
+}
+
+#header .name {
+  float: left;
+  font-size: 40px;
+}
+
+#header .name a {
+  text-decoration: none;
+}
+
+#header .name a:visited {
+  color: #222;
+}
+
+#header .links {
+  float: right;
+}
+
+/*#content {*/
+  /*background-color: white;*/
+/*}*/
+
+div.clear {
+  clear: both;
+}
+
+/******************************************/
+/* TABLES                                 */
+/******************************************/
+
+table {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+table th {
+  text-align: left;
+}
+
+table th, table td {
+  padding: 5px;
+  padding-right: 25px;
+  border: 1px solid #ccc;
+}
+
+table tr.odd {
+  background-color: #eee;
+}
+
+table .sorting_asc {
+  background: url('../images/sort_asc.png') no-repeat center right;
+}
+
+table .sorting_desc {
+  background: url('../images/sort_desc.png') no-repeat center right;
+}
+
+table .sorting {
+  background: url('../images/sort_both.png') no-repeat center right;
+}
+
+table .sorting_asc_disabled {
+  background: url('../images/sort_asc_disabled.png') no-repeat center right;
+}
+
+table .sorting_desc_disabled {
+  background: url('../images/sort_desc_disabled.png') no-repeat center right;
+}
+
+/******************************************/
+/* DATATABLES                             */
+/******************************************/
+.dataTables_filter {
+  margin-bottom: 10px;
+}

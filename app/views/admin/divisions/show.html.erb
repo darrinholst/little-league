@@ -1,0 +1,15 @@
+<% @page_javascript = "admin-players.js" %>
+
+<p>
+  <b>Division:</b>
+  <%= @division.name %>
+</p>
+
+<div class="players">
+  <%= render :partial => "common/players", :locals => {:players => @division.players} %>
+</div>
+
+<div class="dont-print">
+  <%= link_to 'Edit', edit_admin_division_path(@division) %> |
+  <%= link_to 'Back', admin_divisions_path %>
+</div>

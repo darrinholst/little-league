@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Perry Little League</title>
+    <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "matte" %>
+    <%= stylesheet_link_tag "print",  :media => "print"  %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body>
+    <%= render :partial => 'common/header' %>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= menu(link_to("Home", root_path), link_to("Teams", teams_path)) %>
+
+    <div id="content">
+      <%= yield %>
+    </div>
+
+    <%= javascripts %>
+  </body>
+</html>
