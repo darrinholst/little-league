@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #ddd;
   color: #333;
   padding-left: 60px;
   padding-right: 60px;
@@ -67,6 +67,9 @@ ul {
   list-style: square;
 }
 
+/******************************************/
+/* HEADER                                 */
+/******************************************/
 #header {
   margin-bottom: 30px;
   height: 48px;
@@ -89,9 +92,47 @@ ul {
   float: right;
 }
 
-/*#content {*/
+/******************************************/
+/* MENU                                   */
+/******************************************/
+#menu {
+  height: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  list-style-type: none;
+  font-size: 13px;
+  background: #0e51a7;
+  border: 2px solid #204061;
+}
+
+#menu li {
+  float: left;
+  margin: 0;
+}
+
+#menu li a {
+  text-decoration: none;
+  display: block;
+  padding: 0 20px;
+  line-height: 40px;
+  color: #6997d3;
+}
+
+#menu li a:hover, #menu li.active a {
+  color: #fff;
+  background: #4282d3;
+}
+
+/******************************************/
+/* MAIN CONTENT                           */
+/******************************************/
+#content-wrapper {
+  position: relative;
+}
+
+#content {
   /*background-color: white;*/
-/*}*/
+}
 
 div.clear {
   clear: both;
@@ -105,6 +146,7 @@ table {
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
+  background-color: white;
 }
 
 table th {

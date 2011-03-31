@@ -19,7 +19,7 @@ module ApplicationHelper
 
   def menu(*links)
     unless request.path_info =~ /\/users\//
-      content_tag(:ul, :id => "menu", :class => "blue") do
+      content_tag(:ul, :id => "menu") do
         links.collect{|link| menu_link(link)}.join("\n").html_safe
       end
     end
