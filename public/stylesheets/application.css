@@ -32,6 +32,10 @@ ul {
   padding: 0;
 }
 
+div.clear {
+  clear: both;
+}
+
 #notice {
   color: green;
 }
@@ -71,7 +75,7 @@ ul {
 /* HEADER                                 */
 /******************************************/
 #header {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   height: 48px;
 }
 
@@ -142,7 +146,6 @@ ul {
 /******************************************/
 /* TABLES                                 */
 /******************************************/
-
 table {
   margin-top: 10px;
   margin-bottom: 10px;
@@ -191,3 +194,22 @@ table .sorting_desc_disabled {
 .dataTables_filter {
   margin-bottom: 10px;
 }
+
+/******************************************/
+/* TEAM LISTING                           */
+/******************************************/
+div.division {
+  padding: 10px;
+  margin-right: 40px;
+  float: left;
+}
+
+div.division h4 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+div.division .teams {
+  margin: 0;
+}
+

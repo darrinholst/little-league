@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   def index
-    @teams = Team.includes(:division).order("division_id, name").all
+    @divisions = Division.includes(:teams).all
   end
 
   def show

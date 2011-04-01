@@ -1,13 +1,12 @@
-<ul>
-  <% current_division = nil %>
+<% @divisions.each do |division| %>
+  <div class="division">
+    <h4><%= division.name %></h4>
 
-  <% @teams.each do |team| %>
-    <% if current_division.nil? || !current_division.eql?(team.division.name) %>
-      <% current_division = team.division.name %>
-      <h4><%= current_division %></h4>
-    <% end %>
-
-    <li><%= link_to team.name, team_path(team) %></li>
-  <% end %>
-</ul>
+    <ul class="teams">
+      <% division.teams.sort_by{|t| t.name}.each do |team| %>
+        <li class="team"><%= link_to(team.name, team_path(team)) %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 
