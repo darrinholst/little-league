@@ -2,15 +2,11 @@
 <html>
   <head>
     <title>ADMIN - Perry Little League</title>
-    <%= stylesheet_link_tag "application" %>
-    <%= stylesheet_link_tag "print",  :media => "print"  %>
+    <%= stylesheets %>
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <%= render :partial => 'common/header' %>
-
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= header %>
 
     <%= menu(link_to("Divisions", admin_divisions_path),
              link_to("Teams", admin_teams_path),

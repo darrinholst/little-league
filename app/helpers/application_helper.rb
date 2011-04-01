@@ -1,4 +1,11 @@
 module ApplicationHelper
+  def stylesheets
+    [
+      stylesheet_link_tag("application"),
+      stylesheet_link_tag("print",  :media => "print")
+    ].join("\n").html_safe
+  end
+
   def javascripts
     list = [
       "jquery-1.5.1.min.js",
@@ -11,6 +18,10 @@ module ApplicationHelper
     ].flatten.compact
 
     javascript_include_tag(list)
+  end
+
+  def header
+    render(:partial => 'common/header')
   end
 
   def editable(field, value)

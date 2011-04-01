@@ -2,17 +2,14 @@
 <html>
   <head>
     <title>Perry Little League</title>
-    <%= stylesheet_link_tag "application" %>
-    <%= stylesheet_link_tag "print",  :media => "print"  %>
+    <%= stylesheets %>
     <%= csrf_meta_tag %>
   </head>
   <body>
-    <%= render :partial => 'common/header' %>
+    <%= header %>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= menu(link_to("Home", root_path), link_to("Teams", teams_path)) %>
+    <%= menu(link_to("Home", root_path),
+             link_to("Teams", teams_path)) %>
 
     <div id="content">
       <%= yield %>
