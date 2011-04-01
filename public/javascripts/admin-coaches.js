@@ -16,8 +16,7 @@ $(document).ready(function() {
       {bSortable: false}, //email
       null, //division
       null, //team
-      {bSortable: false}, //edit
-      {bSortable: false}  //delete
+      {bSortable: false}, //edit | delete
     ]
   });
 });

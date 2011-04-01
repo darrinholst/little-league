@@ -12,7 +12,6 @@
       <th class="dont-print">Division</th>
       <th>Team</th>
       <th class="dont-print"></th>
-      <th class="dont-print"></th>
     </tr>
   </thead>
   <tbody>
@@ -28,8 +27,9 @@
         <td><%= player.shirt_size %></td>
         <td class="dont-print"><%= player.division_name %></td>
         <td><%= player.team_name %></td>
-        <td class="dont-print"><%= link_to 'Edit', edit_admin_player_path(player) %></td>
-        <td class="dont-print"><%= link_to 'Delete', admin_player_path(player), :confirm => "Are you sure?", :method => :delete %></td>
+        <td class="dont-print">
+          <%= link_to 'Edit', edit_admin_player_path(player) %>&nbsp;|&nbsp;<%= link_to 'Delete', admin_player_path(player), :confirm => "Are you sure?", :method => :delete %>
+        </td>
       </tr>
     <% end %>
   </tbody>

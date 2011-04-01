@@ -1,13 +1,12 @@
 body {
-  background-color: #ddd;
-  color: #333;
-  padding-left: 60px;
-  padding-right: 60px;
+  background-color: white;
+  color: #555;
+  padding: 0px 100px;
 }
 
 body, p, ol, ul, td, th {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: .9em;
+  /*font-size: .9em;*/
 }
 
 pre {
@@ -17,10 +16,11 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #555;
 }
+
 a:visited {
-  color: #222;
+  color: #555;
 }
 
 div.field, div.actions {
@@ -82,14 +82,23 @@ ul {
 
 #header .name a {
   text-decoration: none;
+  color: #555;
 }
 
 #header .name a:visited {
-  color: #222;
+  color: #555;
 }
 
 #header .links {
   float: right;
+  font-size: .9em;
+}
+
+#header img {
+  width: 50px;
+  height: 50px;
+  float: left;
+  /*padding-right: 10px;*/
 }
 
 /******************************************/
@@ -116,6 +125,7 @@ ul {
   padding: 0 20px;
   line-height: 40px;
   color: #6997d3;
+  border-right: 1px solid #0e51a7;
 }
 
 #menu li a:hover, #menu li.active a {
@@ -126,16 +136,7 @@ ul {
 /******************************************/
 /* MAIN CONTENT                           */
 /******************************************/
-#content-wrapper {
-  position: relative;
-}
-
 #content {
-  /*background-color: white;*/
-}
-
-div.clear {
-  clear: both;
 }
 
 /******************************************/
@@ -147,6 +148,7 @@ table {
   margin-bottom: 10px;
   width: 100%;
   background-color: white;
+  font-size: .9em;
 }
 
 table th {

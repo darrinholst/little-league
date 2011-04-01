@@ -20,8 +20,7 @@ $(document).ready(function() {
       null, //shirt size
       null, //division
       null, //team
-      {bSortable: false}, //edit
-      {bSortable: false}  //delete
+      {bSortable: false} // edit | delete
     ]
   });
 });

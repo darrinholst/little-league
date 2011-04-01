@@ -8,7 +8,6 @@
       <th class="dont-print">Division</th>
       <th class="dont-print">Team</th>
       <th class="dont-print"></th>
-      <th class="dont-print"></th>
     </tr>
   </thead>
   <tbody>
@@ -20,8 +19,9 @@
         <td><%= coach.email_address %></td>
         <td class="dont-print"><%= coach.division_name %></td>
         <td class="dont-print"><%= coach.team_name %></td>
-        <td class="dont-print"><%= link_to 'Edit', edit_admin_coach_path(coach) %></td>
-        <td class="dont-print"><%= link_to 'Delete', admin_coach_path(coach), :confirm => "Are you sure?", :method => :delete %></td>
+        <td class="dont-print">
+          <%= link_to 'Edit', edit_admin_coach_path(coach) %>&nbsp;|&nbsp;<%= link_to 'Delete', admin_coach_path(coach), :confirm => "Are you sure?", :method => :delete %>
+        </td>
       </tr>
     <% end %>
   </tbody>
