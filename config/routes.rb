@@ -11,5 +11,6 @@ Pll::Application.routes.draw do
     resources :teams
     resources :players
     resources :coaches
+    resources :fields
   end
 end
