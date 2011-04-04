@@ -79,17 +79,21 @@ div.clear {
   height: 48px;
 }
 
-#header .name {
+#header #logo .name {
   float: left;
+  font-size: 35px;
+}
+
+#header #logo .name span {
   font-size: 40px;
 }
 
-#header .name a {
+#header #logo .name a {
   text-decoration: none;
   color: #555;
 }
 
-#header .name a:visited {
+#header #logo .name a:visited {
   color: #555;
 }
 
@@ -186,6 +190,16 @@ table .sorting_asc_disabled {
 
 table .sorting_desc_disabled {
   background: url('../images/sort_desc_disabled.png') no-repeat center right;
+}
+
+table#announcements {
+  width: inherit;
+  border: none;
+}
+
+table#announcements th, table#announcements td {
+  border: none;
+  padding: 5px 15px 5px 0;
 }
 
 /******************************************/
