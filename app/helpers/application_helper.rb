@@ -46,4 +46,18 @@ module ApplicationHelper
     (name =~ /home/i && request.path_info.eql?("/")) ||
     request.path_info =~ Regexp.new(name, Regexp::IGNORECASE)
   end
+
+  def errors_for(model)
+    if model.errors.any?
+      content_tag(:div, :id => "error_explanation") do
+        content = content_tag(:h2, "Unable to save #{model.class.name.downcase}")
+
+        content << content_tag(:ul) do
+          model.errors.full_messages.collect{|message| content_tag(:li, message)}.join("\n").html_safe
+        end
+
+        content
+      end
+    end
+  end
 end

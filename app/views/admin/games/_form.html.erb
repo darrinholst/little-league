@@ -1,0 +1,27 @@
+<%= form_for([:admin, @game]) do |f| %>
+  <%= errors_for(@game) %>
+
+  <div class="field">
+    <%= f.label :visiting_team_id %><br />
+    <%= f.select :visiting_team_id, Team.all.collect{|t| [t.name, t.id ]}, { :include_blank => true } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :home_team_id %><br />
+    <%= f.select :home_team_id, Team.all.collect{|t| [t.name, t.id ]}, { :include_blank => true } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :field_id %><br />
+    <%= f.select :field_id, Field.all.collect{|f| [f.name, f.id ]}, { :include_blank => true } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :starts_at %><br />
+    <%= f.text_field :starts_at %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %> or <%= link_to "cancel", admin_games_path %>
+  </div>
+<% end %>

@@ -1,0 +1,11 @@
+<ul>
+  <% @games.each do |game| %>
+    <li><%= game.visiting_team.name %> vs <%= game.home_team.name %></li>
+  <% end %>
+</ul>
+
+<hr>
+
+<p>
+  <%= link_to 'New game', new_admin_game_path %>
+</p>

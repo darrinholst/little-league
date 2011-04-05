@@ -27,11 +27,6 @@ div.field, div.actions {
   margin-bottom: 10px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
 div.clear {
   clear: both;
 }
@@ -41,9 +36,7 @@ div.clear {
 }
 
 .field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  display: inline;
 }
 
 #error_explanation {
@@ -66,9 +59,10 @@ div.clear {
   color: #fff;
 }
 
-#error_explanation ul li {
+#error_explanation li {
   font-size: 12px;
   list-style: square;
+  margin-left: 30px;
 }
 
 /******************************************/
@@ -116,10 +110,11 @@ div.clear {
   height: 40px;
   font-weight: bold;
   text-transform: uppercase;
-  list-style-type: none;
   font-size: 13px;
   background: #0e51a7;
   border: 2px solid #204061;
+  list-style: none;
+  padding: 0;
 }
 
 #menu li {
@@ -144,7 +139,9 @@ div.clear {
 /******************************************/
 /* MAIN CONTENT                           */
 /******************************************/
-#content {
+#content ul {
+  list-style: none;
+  padding: 0;
 }
 
 /******************************************/

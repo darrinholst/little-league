@@ -1,15 +1,5 @@
 <%= form_for([:admin, @division]) do |f| %>
-  <% if @division.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@division.errors.count, "error") %> prohibited this division from being saved:</h2>
-
-      <ul>
-      <% @division.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= errors_for(@division) %>
 
   <div class="field">
     <%= f.label :name %><br />
