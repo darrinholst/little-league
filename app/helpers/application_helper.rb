@@ -3,6 +3,7 @@ module ApplicationHelper
     [
       stylesheet_link_tag("application"),
       stylesheet_link_tag("jquery-ui-1.8.11.custom.css"),
+      stylesheet_link_tag("fullcalendar.css"),
       stylesheet_link_tag("print",  :media => "print")
     ].join("\n").html_safe
   end
@@ -14,6 +15,7 @@ module ApplicationHelper
       "jquery-ui-timepicker-addon.js",
       "jquery.dataTables.min.js",
       "jquery.dataTables.sorting.js",
+      "fullcalendar.js",
       "rails.js",
       "application.js",
       "inline-edit.js",
