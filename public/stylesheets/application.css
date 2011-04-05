@@ -147,7 +147,7 @@ div.clear {
 /******************************************/
 /* TABLES                                 */
 /******************************************/
-table {
+table.data {
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
@@ -155,37 +155,37 @@ table {
   font-size: .9em;
 }
 
-table th {
+table.data th {
   text-align: left;
 }
 
-table th, table td {
+table.data th, table.data td {
   padding: 5px;
   padding-right: 25px;
   border: 1px solid #ccc;
 }
 
-table tr.odd {
+table.data tr.odd {
   background-color: #eee;
 }
 
-table .sorting_asc {
+table.data .sorting_asc {
   background: url('../images/sort_asc.png') no-repeat center right;
 }
 
-table .sorting_desc {
+table.data .sorting_desc {
   background: url('../images/sort_desc.png') no-repeat center right;
 }
 
-table .sorting {
+table.data .sorting {
   background: url('../images/sort_both.png') no-repeat center right;
 }
 
-table .sorting_asc_disabled {
+table.data .sorting_asc_disabled {
   background: url('../images/sort_asc_disabled.png') no-repeat center right;
 }
 
-table .sorting_desc_disabled {
+table.data .sorting_desc_disabled {
   background: url('../images/sort_desc_disabled.png') no-repeat center right;
 }
 
@@ -223,4 +223,14 @@ div.division h4 {
 div.division .teams {
   margin: 0;
 }
+
+/******************************************/
+/* TIMEPICKER                             */
+/******************************************/
+.ui-datepicker{font-size: .8em !important;}
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
 
