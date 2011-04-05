@@ -15,7 +15,7 @@ module ApplicationHelper
       "jquery-ui-timepicker-addon.js",
       "jquery.dataTables.min.js",
       "jquery.dataTables.sorting.js",
-      "fullcalendar.js",
+      "fullcalendar.min.js",
       "rails.js",
       "application.js",
       "inline-edit.js",
