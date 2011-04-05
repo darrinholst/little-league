@@ -1,11 +1,7 @@
-<ul>
-  <% @games.each do |game| %>
-    <li><%= game.visiting_team.name %> vs <%= game.home_team.name %></li>
-  <% end %>
-</ul>
+<div class="games">
+  <%= render :partial => "common/games", :locals => {:games => @games} %>
+  <p>
+  <%= link_to 'Add New Game', new_admin_game_path %>
+  </p>
+</div>
 
-<hr>
-
-<p>
-  <%= link_to 'New game', new_admin_game_path %>
-</p>

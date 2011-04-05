@@ -15,5 +15,6 @@ group :test, :development do
   gem 'autotest-growl'
   gem 'autotest-fsevent'
   gem 'spork'
+  gem 'fixjour'
 end
 

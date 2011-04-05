@@ -5,12 +5,12 @@
 
   <div class="field">
     <%= f.label :visiting_team_id %><br />
-    <%= f.select :visiting_team_id, Team.all.collect{|t| [t.name, t.id ]}, { :include_blank => true } %>
+    <%= f.grouped_collection_select(:visiting_team_id, Division.includes(:teams).all, :teams, :name, :id, :name, :include_blank => true) %>
   </div>
 
   <div class="field">
     <%= f.label :home_team_id %><br />
-    <%= f.select :home_team_id, Team.all.collect{|t| [t.name, t.id ]}, { :include_blank => true } %>
+    <%= f.grouped_collection_select(:home_team_id, Division.includes(:teams).all, :teams, :name, :id, :name, :include_blank => true) %>
   </div>
 
   <div class="field">
