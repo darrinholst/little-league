@@ -10,6 +10,16 @@ class Game < ActiveRecord::Base
     field ? field.name : nil
   end
 
+  def starts_at
+    raw = read_attribute(:starts_at)
+    Time.zone.at(raw).strftime("%a %b %d %I:%M") if raw
+  end
+
+  def starts_at=(date)
+    parsed = Timeliness.parse(date)
+    write_attribute(:starts_at, parsed) if parsed
+  end
+
   private
 
   def teams_are_in_the_same_division

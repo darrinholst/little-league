@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails'
 gem 'sqlite3'
 gem 'simple-navigation'
-gem 'chronic'
+gem 'timeliness'
 gem 'devise'
 
 group :test, :development do

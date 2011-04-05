@@ -1,5 +1,5 @@
 class Player < ActiveRecord::Base
-  CUTOFF_DATE = Chronic.parse("04/30/2011")
+  CUTOFF_DATE = Timeliness.parse("04/30/2011")
 
   belongs_to :division
   belongs_to :team
@@ -17,7 +17,7 @@ class Player < ActiveRecord::Base
   end
 
   def birthdate=(birthdate)
-    date = Chronic.parse(birthdate)
+    date = Timeliness.parse(birthdate)
     write_attribute(:birthdate, date.to_date) if date
   end
 
