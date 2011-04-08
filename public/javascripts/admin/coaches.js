@@ -6,7 +6,7 @@ $("div.coaches table").dataTable({
   "bInfo": false,
   "bAutoWidth": false,
 
-  "aaSorting": [[4, "asc"], [5, "asc"], [0, "asc"]],
+  "aaSorting": [[1, "asc"]],
 
   "aoColumns": [
     null, //first name

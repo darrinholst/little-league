@@ -1,33 +1,29 @@
 <% @page_javascript = "games.js" %>
 
-<p>
-  <b>Division: </b><%= @team.division.name %>
-</p>
-
-<p>
-  <b>Name: </b><%= @team.name %>
-</p>
-
-<div class="games">
-  <table class="data" cellspacing="0" cellpadding="0">
-    <thead>
-      <tr>
-        <th>Time</th>
-        <th>Visitor</th>
-        <th>Home</th>
-        <th>Field</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @team.games.each do |game| %>
-        <tr class="<%= cycle("odd", "even") %>">
-          <td><%= game.starts_at %></td>
-          <td><%= game.visiting_team.name %></td>
-          <td><%= game.home_team.name %></td>
-          <td><%= game.field_name %></td>
+<div class="team">
+  <h3><%= @team.name %> (<%= @team.division.name %>)</h3>
+  <div class="games">
+    <h4>Games (<%= @team.games.size %>)</h4>
+    <table class="data" cellspacing="0" cellpadding="0">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Visitor</th>
+          <th>Home</th>
+          <th>Field</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% @team.games.each do |game| %>
+          <tr class="<%= cycle("odd", "even") %>">
+            <td><%= game.starts_at %></td>
+            <td><%= game.visiting_team.name %></td>
+            <td><%= game.home_team.name %></td>
+            <td><%= game.field_name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>
 

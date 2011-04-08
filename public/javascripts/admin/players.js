@@ -6,7 +6,7 @@ $("div.players table").dataTable({
   "bInfo": false,
   "bAutoWidth": false,
 
-  "aaSorting": [[3, "asc"], [1, "asc"]],
+  "aaSorting": [[1, "asc"]],
 
   "aoColumns": [
     null, //first name
