@@ -4,8 +4,6 @@ $("div.games table").dataTable({
   "bFilter": false,
   "bSort": true,
   "bInfo": false,
-  "bAutoWidth": false,
-
-  "aaSorting": [[3, "asc"]]
+  "bAutoWidth": false
 });
 
