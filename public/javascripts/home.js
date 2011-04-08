@@ -1,4 +1,6 @@
 $('#calendar').fullCalendar({
-  // put your options and callbacks here
+  events: 'calendar/home',
+  weekMode: 'liquid',
+  aspectRatio: 2
 })
 

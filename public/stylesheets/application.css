@@ -249,3 +249,9 @@ div.team div.coaches, div.team div.players, div.team div.games {
 .ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
 .ui-timepicker-div td { font-size: 90%; }
 
+/******************************************/
+/* CALENDAR                               */
+/******************************************/
+div#calendar {
+  font-size: .85em;
+}

@@ -14,4 +14,6 @@ Pll::Application.routes.draw do
     resources :fields
     resources :games
   end
+
+  match 'calendar/home', :to => 'calendar#home'
 end
