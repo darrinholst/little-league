@@ -4,6 +4,7 @@ gem 'rails'
 gem 'sqlite3'
 gem 'timeliness'
 gem 'devise'
+gem 'inherited_resources'
 
 group :test, :development do
   gem 'rspec'
