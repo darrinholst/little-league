@@ -12,12 +12,12 @@ class Game < ActiveRecord::Base
 
   def starts_at
     raw = read_attribute(:starts_at)
-    Time.zone.at(raw).strftime("%a %b %d %I:%M") if raw
+    Time.zone.at(raw).strftime("%a %b %d %l:%M %p").gsub(/ {2,}/, " ") if raw
   end
 
   def starts_at=(date)
-    parsed = Timeliness.parse(date)
-    write_attribute(:starts_at, parsed) if parsed
+    parsed = Timeliness.parse(date, :zone => Time.zone)
+    write_attribute(:starts_at, parsed.utc) if parsed
   end
 
   private

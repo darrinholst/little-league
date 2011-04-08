@@ -7,6 +7,11 @@ describe Game do
     game.should be_valid
   end
 
+  it "should parse start time" do
+    game.starts_at = "05/15/2011 08:00 pm"
+    game.starts_at.should == "Sun May 15 8:00 PM"
+  end
+
   it "should require home team" do
     game.home_team = nil
     should_be_invalid "Home team can't be blank"
