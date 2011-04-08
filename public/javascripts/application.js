@@ -6,5 +6,9 @@ $.ajaxSetup({
   }
 });
 
-setTimeout(function() {$('.notice').slideUp();}, 3000)
+setTimeout(function() {
+  if($(".notice").html().length) {
+    $('.notice').slideUp();
+  }
+}, 3000)
 
