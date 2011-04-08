@@ -4,6 +4,13 @@ $("div.games table").dataTable({
   "bFilter": false,
   "bSort": true,
   "bInfo": false,
-  "bAutoWidth": false
+  "bAutoWidth": false,
+
+  "aoColumns": [
+    {sType: "start-date"}, //start date
+    null, //visitor
+    null, //home
+    null, //field
+  ]
 });
 

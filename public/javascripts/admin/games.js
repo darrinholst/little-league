@@ -13,7 +13,7 @@ $("div.games table").dataTable({
     null, //visitor
     null, //home
     null, //field
-    null, //time
+    {sType: "start-date"}, //start date
     {bSortable: false}, //edit | delete
   ]
 });
