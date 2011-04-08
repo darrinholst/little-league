@@ -6,7 +6,7 @@ $("div.games table").dataTable({
   "bInfo": false,
   "bAutoWidth": false,
 
-  "aaSorting": [[3, "asc"], [0, "asc"], [1, "asc"]],
+  "aaSorting": [[4, "asc"], [0, "asc"]],
 
   "aoColumns": [
     null, //division

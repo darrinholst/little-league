@@ -1,7 +1,33 @@
+<% @page_javascript = "games.js" %>
+
 <p>
   <b>Division: </b><%= @team.division.name %>
 </p>
+
 <p>
   <b>Name: </b><%= @team.name %>
 </p>
+
+<div class="games">
+  <table class="data" cellspacing="0" cellpadding="0">
+    <thead>
+      <tr>
+        <th>Visitor</th>
+        <th>Home</th>
+        <th>Field</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @team.games.each do |game| %>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td><%= game.visiting_team.name %></td>
+          <td><%= game.home_team.name %></td>
+          <td><%= game.field_name %></td>
+          <td><%= game.starts_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
