@@ -1,43 +1,34 @@
 body {
   background-color: white;
   color: #555;
-  padding: 0px 100px;
-}
+  padding: 0px 100px; }
 
 body, p, ol, ul, td, th {
   font-family: verdana, arial, helvetica, sans-serif;
-  /*font-size: .9em;*/
-}
+  /*font-size: .9em;*/ }
 
 pre {
   background-color: #eee;
   padding: 10px;
-  font-size: 11px;
-}
+  font-size: 11px; }
 
 a {
-  color: #555;
-}
+  color: #555; }
 
 a:visited {
-  color: #555;
-}
+  color: #555; }
 
 div.field, div.actions {
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 div.clear {
-  clear: both;
-}
+  clear: both; }
 
 #notice {
-  color: green;
-}
+  color: green; }
 
 .field_with_errors {
-  display: inline;
-}
+  display: inline; }
 
 #error_explanation {
   width: 450px;
@@ -45,8 +36,7 @@ div.clear {
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
+  background-color: #f0f0f0; }
 
 #error_explanation h2 {
   text-align: left;
@@ -56,93 +46,66 @@ div.clear {
   margin: -7px;
   margin-bottom: 0px;
   background-color: #c00;
-  color: #fff;
-}
+  color: #fff; }
 
 #error_explanation li {
   font-size: 12px;
   list-style: square;
-  margin-left: 30px;
-}
+  margin-left: 30px; }
 
-/******************************************/
-/* HEADER                                 */
-/******************************************/
 #header {
   margin-bottom: 10px;
-  height: 48px;
-}
+  height: 48px; }
+  #header #logo .name {
+    float: left;
+    font-size: 40px; }
+    #header #logo .name a {
+      text-decoration: none;
+      color: #555; }
+      #header #logo .name a:visited {
+        color: #555; }
+  #header .links {
+    float: right;
+    font-size: .9em; }
+  #header img {
+    width: 50px;
+    height: 50px;
+    float: left; }
 
-#header #logo .name {
-  float: left;
-  font-size: 35px;
-}
-
-#header #logo .name span {
-  font-size: 40px;
-}
-
-#header #logo .name a {
-  text-decoration: none;
-  color: #555;
-}
-
-#header #logo .name a:visited {
-  color: #555;
-}
-
-#header .links {
-  float: right;
-  font-size: .9em;
-}
-
-#header img {
-  width: 50px;
-  height: 50px;
-  float: left;
-  /*padding-right: 10px;*/
-}
-
-/******************************************/
-/* MENU                                   */
-/******************************************/
 #menu {
+  background: -moz-linear-gradient(left, #0e51a7, #4282d3);
+  background: -webkit-gradient(linear, left top, right top, from(#0e51a7), to(#4282d3));
+  filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#0e51a7', EndColorStr='#4282d3', GradientType=1);
   height: 40px;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 13px;
-  background: #0e51a7;
-  border: 2px solid #204061;
+  border: 1px solid #204061;
   list-style: none;
-  padding: 0;
-}
-
-#menu li {
-  float: left;
-  margin: 0;
-}
-
-#menu li a {
-  text-decoration: none;
-  display: block;
-  padding: 0 20px;
-  line-height: 40px;
-  color: #6997d3;
-  border-right: 1px solid #0e51a7;
-}
-
-#menu li a:hover, #menu li.active a {
-  color: #fff;
-  background: #4282d3;
-}
+  padding: 0; }
+  #menu li {
+    float: left;
+    margin: 0; }
+    #menu li a {
+      text-decoration: none;
+      display: block;
+      padding: 0 20px;
+      line-height: 40px;
+      color: #6997d3;
+      border-right: 1px solid #0e51a7; }
+      #menu li a:hover {
+        color: #fff;
+        background: #4282D3; }
+    #menu li.active a {
+      color: #fff;
+      background: #4282D3; }
 
 /******************************************/
 /* MAIN CONTENT                           */
 /******************************************/
 #content ul {
   list-style: none;
-  padding: 0;
-}
+  padding: 0; }
 
 /******************************************/
 /* TABLES                                 */
@@ -152,59 +115,47 @@ table.data {
   margin-bottom: 10px;
   width: 100%;
   background-color: white;
-  font-size: .9em;
-}
+  font-size: .9em; }
 
 table.data th {
-  text-align: left;
-}
+  text-align: left; }
 
 table.data th, table.data td {
   padding: 5px;
   padding-right: 25px;
-  border: 1px solid #ccc;
-}
+  border: 1px solid #ccc; }
 
 table.data tr.odd {
-  background-color: #eee;
-}
+  background-color: #eee; }
 
 table.data .sorting_asc {
-  background: url('../images/sort_asc.png') no-repeat center right;
-}
+  background: url("../images/sort_asc.png") no-repeat center right; }
 
 table.data .sorting_desc {
-  background: url('../images/sort_desc.png') no-repeat center right;
-}
+  background: url("../images/sort_desc.png") no-repeat center right; }
 
 table.data .sorting {
-  background: url('../images/sort_both.png') no-repeat center right;
-}
+  background: url("../images/sort_both.png") no-repeat center right; }
 
 table.data .sorting_asc_disabled {
-  background: url('../images/sort_asc_disabled.png') no-repeat center right;
-}
+  background: url("../images/sort_asc_disabled.png") no-repeat center right; }
 
 table.data .sorting_desc_disabled {
-  background: url('../images/sort_desc_disabled.png') no-repeat center right;
-}
+  background: url("../images/sort_desc_disabled.png") no-repeat center right; }
 
 table#announcements {
   width: inherit;
-  border: none;
-}
+  border: none; }
 
 table#announcements th, table#announcements td {
   border: none;
-  padding: 5px 15px 5px 0;
-}
+  padding: 5px 15px 5px 0; }
 
 /******************************************/
 /* DATATABLES                             */
 /******************************************/
 .dataTables_filter {
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 /******************************************/
 /* DIVISION LISTING                       */
@@ -212,46 +163,50 @@ table#announcements th, table#announcements td {
 div.division {
   padding: 10px;
   margin-right: 40px;
-  float: left;
-}
+  float: left; }
 
 div.division h4 {
   margin: 0;
-  margin-bottom: 10px;
-}
+  margin-bottom: 10px; }
 
 div.division .teams {
-  margin: 0;
-}
+  margin: 0; }
 
 /******************************************/
 /* TEAM LISTING                           */
 /******************************************/
 div.team h4 {
-  margin: 0;
-}
+  margin: 0; }
 
 div.team h3 {
-  margin-bottom: 30px;
-}
+  margin-bottom: 30px; }
 
 div.team div.coaches, div.team div.players, div.team div.games {
-  margin-bottom: 30px;
-}
+  margin-bottom: 30px; }
 
 /******************************************/
 /* TIMEPICKER                             */
 /******************************************/
-.ui-datepicker{font-size: .8em !important;}
-.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
-.ui-timepicker-div dl{ text-align: left; }
-.ui-timepicker-div dl dt{ height: 25px; }
-.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
-.ui-timepicker-div td { font-size: 90%; }
+.ui-datepicker {
+  font-size: 0.8em !important; }
+
+.ui-timepicker-div .ui-widget-header {
+  margin-bottom: 8px; }
+
+.ui-timepicker-div dl {
+  text-align: left; }
+
+.ui-timepicker-div dl dt {
+  height: 25px; }
+
+.ui-timepicker-div dl dd {
+  margin: -25px 0 10px 65px; }
+
+.ui-timepicker-div td {
+  font-size: 90%; }
 
 /******************************************/
 /* CALENDAR                               */
 /******************************************/
 div#calendar {
-  font-size: .85em;
-}
+  font-size: .85em; }

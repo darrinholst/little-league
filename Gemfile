@@ -1,10 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails'
+gem 'rails', '3.0.6'
 gem 'sqlite3'
 gem 'timeliness'
 gem 'devise'
 gem 'inherited_resources'
+gem 'sass'
 
 group :test, :development do
   gem 'rspec'
