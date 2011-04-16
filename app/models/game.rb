@@ -15,8 +15,7 @@ class Game < ActiveRecord::Base
   end
 
   def starts_at_display
-    raw = read_attribute(:starts_at)
-    Time.zone.at(raw).strftime("%a %b %d %l:%M %p").gsub(/ {2,}/, " ") if raw
+    starts_at.strftime("%a %b %d %l:%M %p").gsub(/ {2,}/, " ") if starts_at
   end
 
   def starts_at=(date)
