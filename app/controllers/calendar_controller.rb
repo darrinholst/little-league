@@ -1,6 +1,6 @@
 class CalendarController < ApplicationController
   def home
-    @games = Game.includes(:home_team, :visiting_team).all.map do |game|
+    @games = Game.includes([{:home_team => :division}, :visiting_team]).order("divisions.name").all.map do |game|
       {
         :title => "#{game.visiting_team.name} at #{game.home_team.name}",
         :start => game.starts_at.iso8601,
@@ -14,9 +14,9 @@ class CalendarController < ApplicationController
 
   def color_for(division)
     case division
-      when /t-ball/i then '#4CB052'
-      when /rookies/i then '#E0C240'
-      when /minors/i then '#D47F1E'
+      when /t-ball/i then '#D47F1E'
+      when /rookies/i then '#8C66D9'
+      when /minors/i then '#4CB052'
       when /majors/i then '#AD2D2D'
       else '#668CD9'
     end

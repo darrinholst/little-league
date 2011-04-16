@@ -67,6 +67,11 @@ div.clear {
 }
 
 @import "header";
+@import "home";
+@import "datatables";
+@import "timepicker";
+@import "calendar";
+
 
 /******************************************/
 /* MAIN CONTENT                           */
@@ -74,68 +79,6 @@ div.clear {
 #content ul {
   list-style: none;
   padding: 0;
-}
-
-/******************************************/
-/* TABLES                                 */
-/******************************************/
-table.data {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-  background-color: white;
-  font-size: .9em;
-}
-
-table.data th {
-  text-align: left;
-}
-
-table.data th, table.data td {
-  padding: 5px;
-  padding-right: 25px;
-  border: 1px solid #ccc;
-}
-
-table.data tr.odd {
-  background-color: #eee;
-}
-
-table.data .sorting_asc {
-  background: url('../images/sort_asc.png') no-repeat center right;
-}
-
-table.data .sorting_desc {
-  background: url('../images/sort_desc.png') no-repeat center right;
-}
-
-table.data .sorting {
-  background: url('../images/sort_both.png') no-repeat center right;
-}
-
-table.data .sorting_asc_disabled {
-  background: url('../images/sort_asc_disabled.png') no-repeat center right;
-}
-
-table.data .sorting_desc_disabled {
-  background: url('../images/sort_desc_disabled.png') no-repeat center right;
-}
-
-table#announcements {
-  width: inherit;
-  border: none;
-}
-
-table#announcements th, table#announcements td {
-  border: none;
-  padding: 5px 15px 5px 0;
-}
-
-/******************************************/
-/* DATATABLES                             */
-/******************************************/
-.dataTables_filter {
-  margin-bottom: 10px;
 }
 
 /******************************************/
@@ -169,22 +112,5 @@ div.team h3 {
 
 div.team div.coaches, div.team div.players, div.team div.games {
   margin-bottom: 30px;
-}
-
-/******************************************/
-/* TIMEPICKER                             */
-/******************************************/
-.ui-datepicker{font-size: .8em !important;}
-.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
-.ui-timepicker-div dl{ text-align: left; }
-.ui-timepicker-div dl dt{ height: 25px; }
-.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
-.ui-timepicker-div td { font-size: 90%; }
-
-/******************************************/
-/* CALENDAR                               */
-/******************************************/
-div#calendar {
-  font-size: .85em;
 }
 

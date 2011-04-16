@@ -100,62 +100,95 @@ div.clear {
       color: #fff;
       background: #4282D3; }
 
-/******************************************/
-/* MAIN CONTENT                           */
-/******************************************/
-#content ul {
+#home .filters {
+  float: right;
   list-style: none;
-  padding: 0; }
+  margin: 0;
+  margin-bottom: 10px; }
+  #home .filters li {
+    float: left;
+    margin-left: 10px;
+    border: 1px solid black; }
+    #home .filters li.juniors {
+      background: #668CD9; }
+    #home .filters li.majors {
+      background: #AD2D2D; }
+    #home .filters li.minors {
+      background: #4CB052; }
+    #home .filters li.rookies {
+      background: #8C66D9; }
+    #home .filters li.tball {
+      background: #D47F1E; }
+    #home .filters li a {
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      line-height: 30px;
+      font-size: 14px; }
+  #home .filters label {
+    padding-left: 5px;
+    padding-right: 15px; }
+    #home .filters label .color {
+      display: inline;
+      width: 10px;
+      height: 10px;
+      background: black; }
 
-/******************************************/
-/* TABLES                                 */
-/******************************************/
 table.data {
   margin-top: 10px;
   margin-bottom: 10px;
   width: 100%;
   background-color: white;
   font-size: .9em; }
+  table.data th {
+    text-align: left; }
+  table.data th, table.data td {
+    padding: 5px;
+    padding-right: 25px;
+    border: 1px solid #ccc; }
+  table.data tr.odd {
+    background-color: #eee; }
+  table.data .sorting_asc {
+    background: url("../images/sort_asc.png") no-repeat center right; }
+  table.data .sorting_desc {
+    background: url("../images/sort_desc.png") no-repeat center right; }
+  table.data .sorting {
+    background: url("../images/sort_both.png") no-repeat center right; }
+  table.data .sorting_asc_disabled {
+    background: url("../images/sort_asc_disabled.png") no-repeat center right; }
+  table.data .sorting_desc_disabled {
+    background: url("../images/sort_desc_disabled.png") no-repeat center right; }
 
-table.data th {
-  text-align: left; }
-
-table.data th, table.data td {
-  padding: 5px;
-  padding-right: 25px;
-  border: 1px solid #ccc; }
-
-table.data tr.odd {
-  background-color: #eee; }
-
-table.data .sorting_asc {
-  background: url("../images/sort_asc.png") no-repeat center right; }
-
-table.data .sorting_desc {
-  background: url("../images/sort_desc.png") no-repeat center right; }
-
-table.data .sorting {
-  background: url("../images/sort_both.png") no-repeat center right; }
-
-table.data .sorting_asc_disabled {
-  background: url("../images/sort_asc_disabled.png") no-repeat center right; }
-
-table.data .sorting_desc_disabled {
-  background: url("../images/sort_desc_disabled.png") no-repeat center right; }
-
-table#announcements {
-  width: inherit;
-  border: none; }
-
-table#announcements th, table#announcements td {
-  border: none;
-  padding: 5px 15px 5px 0; }
-
-/******************************************/
-/* DATATABLES                             */
-/******************************************/
 .dataTables_filter {
   margin-bottom: 10px; }
+
+.ui-datepicker {
+  font-size: 0.8em !important; }
+
+.ui-timepicker-div .ui-widget-header {
+  margin-bottom: 8px; }
+
+.ui-timepicker-div dl {
+  text-align: left; }
+
+.ui-timepicker-div dl dt {
+  height: 25px; }
+
+.ui-timepicker-div dl dd {
+  margin: -25px 0 10px 65px; }
+
+.ui-timepicker-div td {
+  font-size: 90%; }
+
+div#calendar {
+  font-size: .85em; }
+
+/******************************************/
+/* MAIN CONTENT                           */
+/******************************************/
+#content ul {
+  list-style: none;
+  padding: 0; }
 
 /******************************************/
 /* DIVISION LISTING                       */
@@ -183,30 +216,3 @@ div.team h3 {
 
 div.team div.coaches, div.team div.players, div.team div.games {
   margin-bottom: 30px; }
-
-/******************************************/
-/* TIMEPICKER                             */
-/******************************************/
-.ui-datepicker {
-  font-size: 0.8em !important; }
-
-.ui-timepicker-div .ui-widget-header {
-  margin-bottom: 8px; }
-
-.ui-timepicker-div dl {
-  text-align: left; }
-
-.ui-timepicker-div dl dt {
-  height: 25px; }
-
-.ui-timepicker-div dl dd {
-  margin: -25px 0 10px 65px; }
-
-.ui-timepicker-div td {
-  font-size: 90%; }
-
-/******************************************/
-/* CALENDAR                               */
-/******************************************/
-div#calendar {
-  font-size: .85em; }

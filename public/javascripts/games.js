@@ -4,7 +4,7 @@ $("div.games table").dataTable({
   "bFilter": false,
   "bSort": true,
   "bInfo": false,
-  "bAutoWidth": false,
+  "bAutoWidth": true,
 
   "aoColumns": [
     {sType: "start-date"}, //start date
