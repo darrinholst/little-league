@@ -5,7 +5,8 @@ class CalendarController < ApplicationController
         :title => "#{game.visiting_team.name} at #{game.home_team.name}",
         :start => game.starts_at.iso8601,
         :allDay => false,
-        :color => color_for(game.division_name)
+        :color => color_for(game.division_name),
+        :division => game.division_name
       }
     end
   end
