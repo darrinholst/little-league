@@ -9,7 +9,7 @@ describe Game do
 
   it "should parse start time" do
     game.starts_at = "05/15/2011 08:00 pm"
-    game.starts_at.should == "Sun May 15 8:00 PM"
+    game.starts_at_display.should == "Sun May 15 8:00 PM"
   end
 
   it "should require home team" do

@@ -16,7 +16,7 @@
         <td><%= game.visiting_team.name %></td>
         <td><%= game.home_team.name %></td>
         <td><%= game.field_name %></td>
-        <td><%= game.starts_at %></td>
+        <td><%= game.starts_at_display %></td>
         <td class="dont-print">
           <%= link_to 'Edit', edit_admin_game_path(game) %>&nbsp;|&nbsp;<%= link_to 'Delete', admin_game_path(game), :confirm => "Are you sure?", :method => :delete %>
         </td>

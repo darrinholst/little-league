@@ -6,11 +6,15 @@ class Game < ActiveRecord::Base
   validates_presence_of :home_team, :visiting_team
   validate :teams_are_in_the_same_division
 
+  def division_name
+    home_team.division.name
+  end
+
   def field_name
     field ? field.name : nil
   end
 
-  def starts_at
+  def starts_at_display
     raw = read_attribute(:starts_at)
     Time.zone.at(raw).strftime("%a %b %d %l:%M %p").gsub(/ {2,}/, " ") if raw
   end

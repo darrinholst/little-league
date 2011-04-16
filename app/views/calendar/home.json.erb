@@ -1,7 +1,1 @@
-[
-  {
-    "title": "Opening Ceremonies",
-    "start": "<%= Timeliness.parse("04/30/2011 12:00:00", :zone => Time.zone).iso8601 %>",
-    "allDay": false
-  }
-]
+<%= @games.to_json.html_safe %>
