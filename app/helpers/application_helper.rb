@@ -22,7 +22,11 @@ module ApplicationHelper
       @page_javascript
     ].flatten.compact
 
-    javascript_include_tag(list)
+    if(@require_javascript)
+      "<script data-main=\"/javascripts/#{@require_javascript}\" src=\"/javascripts/require-jquery.js\"></script>".html_safe
+    else
+      javascript_include_tag(list)
+    end
   end
 
   def header
