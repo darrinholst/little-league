@@ -1,4 +1,4 @@
-require(["jquery", "rails", "application", "fullcalendar.min"], function($) {
+require(["appcommon", "fullcalendar.min"], function() {
   $(function() {
     var displayedDivisions = [];
 
