@@ -61,9 +61,9 @@ div.clear {
     font-size: 40px; }
     #header #logo .name a {
       text-decoration: none;
-      color: #555; }
+      color: #555555; }
       #header #logo .name a:visited {
-        color: #555; }
+        color: #555555; }
   #header .links {
     float: right;
     font-size: .9em; }
@@ -73,6 +73,7 @@ div.clear {
     float: left; }
 
 #menu {
+  background: #0e51a7;
   background: -moz-linear-gradient(left, #0e51a7, #4282d3);
   background: -webkit-gradient(linear, left top, right top, from(#0e51a7), to(#4282d3));
   filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#0e51a7', EndColorStr='#4282d3', GradientType=1);
@@ -94,11 +95,11 @@ div.clear {
       color: #6997d3;
       border-right: 1px solid #0e51a7; }
       #menu li a:hover {
-        color: #fff;
-        background: #4282D3; }
+        color: white;
+        background: #4282d3; }
     #menu li.active a {
-      color: #fff;
-      background: #4282D3; }
+      color: white;
+      background: #4282d3; }
 
 #home .filters {
   float: right;
