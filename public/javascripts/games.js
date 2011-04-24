@@ -1,4 +1,4 @@
-require(["appcommon", "jquery.dataTables.min", "jquery.dataTables.sorting"], function() {
+require(["appcommon", "datatables"], function() {
   $(function() {
     $("div.games table").dataTable({
       "bPaginate": false,

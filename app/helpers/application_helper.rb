@@ -8,27 +8,6 @@ module ApplicationHelper
     ].join("\n").html_safe
   end
 
-  def javascripts
-    list = [
-      "jquery-1.5.1.min.js",
-      "jquery-ui-1.8.11.custom.min.js",
-      "jquery-ui-timepicker-addon.js",
-      "jquery.dataTables.min.js",
-      "jquery.dataTables.sorting.js",
-      "fullcalendar.min.js",
-      "rails.js",
-      "application.js",
-      "inline-edit.js",
-      @page_javascript
-    ].flatten.compact
-
-    if(@require_javascript)
-      "<script data-main=\"/javascripts/#{@require_javascript}\" src=\"/javascripts/require-jquery.js\"></script>".html_safe
-    else
-      javascript_include_tag(list)
-    end
-  end
-
   def header
     render(:partial => 'common/header')
   end
