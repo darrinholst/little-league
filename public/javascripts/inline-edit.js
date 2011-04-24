@@ -1,6 +1,6 @@
 define(function() {
   var input, original;
-  
+
   var reset = function() {
     if(input) {
       input.remove();
