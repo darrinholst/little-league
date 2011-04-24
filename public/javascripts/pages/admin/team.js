@@ -1,1 +1,1 @@
-require(["admin/coaches", "admin/players", "admin/games"], function() {});
+require(["pages/admin/coaches", "pages/admin/players", "pages/admin/games"], function() {});
