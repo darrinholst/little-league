@@ -110,18 +110,8 @@ div.clear {
     float: left;
     margin-left: 10px;
     border: 1px solid black; }
-    #home .filters li.juniors {
-      background: #668CD9; }
-    #home .filters li.majors {
-      background: #AD2D2D; }
-    #home .filters li.minors {
-      background: #4CB052; }
-    #home .filters li.rookies {
-      background: #8C66D9; }
-    #home .filters li.tball {
-      background: #D47F1E; }
     #home .filters li.off {
-      background: #bbb; }
+      background: #bbbbbb !important; }
     #home .filters li a {
       color: white;
       padding: 10px;

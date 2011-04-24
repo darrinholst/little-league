@@ -10,28 +10,8 @@
       margin-left: 10px;
       border: 1px solid black;
 
-      &.juniors {
-        background: #668CD9;
-      }
-
-      &.majors {
-        background: #AD2D2D;
-      }
-
-      &.minors {
-        background: #4CB052;
-      }
-
-      &.rookies {
-        background: #8C66D9;
-      }
-
-      &.tball {
-        background: #D47F1E;
-      }
-      
       &.off {
-        background: #bbb;
+        background: #bbb !important;
       }
 
       a {

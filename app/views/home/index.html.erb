@@ -2,11 +2,9 @@
 
 <div id="home">
   <ul class="filters">
-    <li class="juniors on"><a href=#>Juniors</a></li>
-    <li class="majors on"><a href=#>Majors</a></li>
-    <li class="minors on"><a href=#>Minors</a></li>
-    <li class="rookies on"><a href=#>Rookies</a></li>
-    <li class="tball on"><a href=#>T-Ball</a></li>
+    <% Division.all.each do |division| %>
+      <li style="background: <%= division.color %>;" class="<%= division.name.downcase %> on"><a href=#><%= division.name %></a></li>
+    <% end %>
   </ul>
   <div id="calendar">
   </div>
