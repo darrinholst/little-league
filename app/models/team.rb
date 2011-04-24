@@ -8,6 +8,6 @@ class Team < ActiveRecord::Base
   validates_presence_of :name
 
   def games
-    [home_games, away_games].flatten
+    [home_games, away_games].flatten.sort {|x,y| x.starts_at <=> y.starts_at }
   end
 end
