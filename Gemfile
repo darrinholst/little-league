@@ -6,6 +6,7 @@ gem 'timeliness'
 gem 'devise'
 gem 'inherited_resources'
 gem 'sass'
+gem 'ri_cal'
 
 group :test, :development do
   gem 'rspec'

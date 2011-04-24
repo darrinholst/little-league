@@ -79,6 +79,7 @@ GEM
       thor (~> 0.14.4)
     rake (0.8.7)
     responders (0.6.2)
+    ri_cal (0.8.8)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
       rspec-expectations (~> 2.5.0)
@@ -117,6 +118,7 @@ DEPENDENCIES
   fixjour
   inherited_resources
   rails (= 3.0.6)
+  ri_cal
   rspec
   rspec-rails
   sass

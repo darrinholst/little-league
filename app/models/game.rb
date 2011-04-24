@@ -10,6 +10,10 @@ class Game < ActiveRecord::Base
     home_team.division.name
   end
 
+  def division_color
+    home_team.division.color
+  end
+
   def field_name
     field ? field.name : nil
   end

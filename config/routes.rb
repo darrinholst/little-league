@@ -16,4 +16,5 @@ Pll::Application.routes.draw do
   end
 
   match 'calendar/home', :to => 'calendar#home'
+  match 'calendar.ics', :to => 'calendar#ical'
 end
