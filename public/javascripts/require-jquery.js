@@ -1722,7 +1722,6 @@ var require, define;
 
     //Set baseUrl based on config.
     s.baseUrl = cfg.baseUrl;
-    s.baseUrl = cfg.baseUrl = "/javascripts/"
 
     //****** START page load functionality ****************
     /**

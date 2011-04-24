@@ -1,4 +1,4 @@
-require(["appcommon", "fullcalendar.min"], function() {
+require(["application", "fullcalendar.min"], function() {
   $(function() {
     var displayedDivisions = [];
 

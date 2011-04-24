@@ -1,4 +1,4 @@
-require(["appcommon", "datatables"], function() {
+require(["application", "datatables"], function() {
   $(function() {
     $("div.games table").dataTable({
       "bPaginate": false,

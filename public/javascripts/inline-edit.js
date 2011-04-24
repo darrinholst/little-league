@@ -1,52 +1,51 @@
-PLL.InlineEdit = {
-  reset: function() {
-    if(this.input) {
-      this.input.remove();
-      this.original.show();
+define(function() {
+  var input, original;
+  
+  var reset = function() {
+    if(input) {
+      input.remove();
+      original.show();
     }
-  },
+  }
 
-  setup: function(originalElement) {
-    var self = this;
-    this.reset();
+  var setup = function(originalElement) {
+    reset();
 
-    this.original = $(originalElement);
-    this.input = $('<input type="text" value="' + this.original.html() + '">').css("width", this.original.parent().innerWidth() - 40)
+    original = $(originalElement);
+    input = $('<input type="text" value="' + original.html() + '">').css("width", original.parent().innerWidth() - 40)
 
-    this.original.hide();
-    this.input.appendTo(this.original.parent());
-    this.input.focus();
+    original.hide();
+    input.appendTo(original.parent());
+    input.focus();
 
-    this.input.keyup(function(event) {
+    input.keyup(function(event) {
       if(event.keyCode == 13) { //enter
-        self.submit();
+        submit();
       }
 
       if(event.keyCode == 27) { //escape
-        self.reset();
+        reset();
       }
     });
 
-    this.input.blur(function(event) {
-      self.submit();
+    input.blur(function(event) {
+      submit();
     });
-  },
+  }
 
-  submit: function() {
-    var self = this;
-
-    if(this.input && this.input.attr("value") != this.original.html()) {
+  var submit = function() {
+    if(input && input.attr("value") !== original.html()) {
       var data = {};
-      data[this.original.attr("data-field")] = this.input.attr("value")
+      data[original.attr("data-field")] = input.attr("value")
 
-      $.ajax(this.original.parents("[data-update-url]").attr("data-update-url"), {
+      $.ajax(original.parents("[data-update-url]").attr("data-update-url"), {
         type: "PUT",
         data: data,
 
         complete: function(xhr) {
           if(xhr.status == 200) {
-            self.original.html(self.input.attr("value"));
-            self.reset();
+            original.html(input.attr("value"));
+            reset();
           }
           else {
             alert("Oops, can't update that");
@@ -54,18 +53,25 @@ PLL.InlineEdit = {
         }
       });
     }
+    else {
+      reset();
+    }
   }
-}
 
-$("span.editable").click(function() {
-  PLL.InlineEdit.setup(this);
-})
+  $(function() {
+    $("span.editable").click(function() {
+      setup(this);
+    })
 
-$("td").click(function() {
-  var editable = $(this).children("span.editable")
+    $("td").click(function() {
+      var editable = $(this).children("span.editable")
 
-  if(editable) {
-    PLL.InlineEdit.setup(editable);
-  }
-})
+      if(editable) {
+        setup(editable);
+      }
+    })
+  });
+});
+
+
 

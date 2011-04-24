@@ -1,4 +1,4 @@
-require(["appcommon", "datatables"], function() {
+require(["application", "datatables", "inline-edit"], function() {
   $(function() {
     $("div.players table").dataTable({
       "bPaginate": false,
