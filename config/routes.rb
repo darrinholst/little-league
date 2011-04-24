@@ -16,5 +16,5 @@ Pll::Application.routes.draw do
   end
 
   match 'calendar/home', :to => 'calendar#home'
-  match 'calendar.ics', :to => 'calendar#ical'
+  match 'calendar/:team_id.ics', :to => 'calendar#ical', :as => 'team_ical'
 end

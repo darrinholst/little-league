@@ -18,13 +18,17 @@ class CalendarController < ApplicationController
   end
 
   def ical
+    team = Team.find(params[:team_id])
+
     calendar = RiCal.Calendar do |cal|
-      Game.all.map do |game|
+      cal.add_x_property 'X-WR-CALNAME', "2011 #{team.name} Baseball"
+
+      team.games.each do |game|
         cal.event do |event|
           event.summary "#{game.visiting_team.name} at #{game.home_team.name}"
           event.dtstart game.starts_at
           event.dtend game.starts_at + 90.minutes
-          event.location game.field.name
+          event.location "#{game.field.name} Field"
         end
       end
     end

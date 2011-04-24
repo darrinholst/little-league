@@ -176,6 +176,12 @@ table.data {
 div#calendar {
   font-size: .85em; }
 
+.public .team .games h4 {
+  float: left; }
+
+span.ical {
+  float: right; }
+
 /******************************************/
 /* MAIN CONTENT                           */
 /******************************************/
