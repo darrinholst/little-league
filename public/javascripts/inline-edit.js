@@ -59,11 +59,11 @@ define(function() {
   }
 
   $(function() {
-    $("span.editable").click(function() {
+    $("span.editable").dblclick(function() {
       setup(this);
     })
 
-    $("td").click(function() {
+    $("td").dblclick(function() {
       var editable = $(this).children("span.editable")
 
       if(editable) {
