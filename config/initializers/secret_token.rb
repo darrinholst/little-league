@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Pll::Application.config.secret_token = 'c8920a833068326537afc4963f90d951f6c958f37f8e161abc051ef21c9246c2d29de704f935e82edbab12eed81dbacd140ffbca026e4f7497580c56373e5ac5'
+Pll::Application.config.secret_token = 'a8605186a1bb4409e5169f0183ed43411601b2c68315f9f92543564b3354dad440b5cad67a6148e000600609055db2f4c5e11b3cb0661605d20d89a6f9b22e07'

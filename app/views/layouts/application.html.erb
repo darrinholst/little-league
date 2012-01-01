@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Perry Little League</title>
-    <%= stylesheets %>
-    <%= csrf_meta_tag %>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag "application" %>
   </head>
   <body>
     <%= header %>
@@ -15,9 +16,6 @@
       <%= yield %>
     </div>
 
-    <% if @require_javascript %>
-      <script src="/javascripts/require-config.js"></script>
-      <script data-main="<%= @require_javascript %>" src="/javascripts/require-jquery.js"></script>
-    <% end %>
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -6,76 +6,30 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
-names = [
-  ["Lance", "Candy"],
-  ["Lance", "Schuetz"],
-  ["Ted", "Legnon"],
-  ["Jessie", "Kohen"],
-  ["Clayton", "Goll"],
-  ["Darren", "Cloe"],
-  ["Clayton", "Gumbs"],
-  ["Jessie", "Vivanco"],
-  ["Kurt", "Lamboy"],
-  ["Guy", "Engles"],
-  ["Fernando", "Gallager"],
-  ["Darren", "Anstett"],
-  ["Allan", "Phillippe"],
-  ["Lonnie", "Papageorge"],
-  ["Nelson", "Devilbiss"],
-  ["Jamie", "Reetz"],
-  ["Clinton", "Bradly"],
-  ["Hugh", "Kennamer"],
-  ["Darren", "Dory"],
-  ["Erik", "Jeong"],
-  ["Clayton", "Benito"],
-  ["Clayton", "Saint"],
-  ["Julio", "Schluter"],
-  ["Max", "Schroth"],
-  ["Lonnie", "Buser"],
-  ["Lonnie", "Carico"],
-  ["Kelly", "Nally"],
-  ["Neil", "Copland"],
-  ["Jessie", "Grignon"],
-  ["Darren", "Pen"],
-  ["Lance", "Mcnear"],
-  ["Erik", "Guan"],
-  ["Mathew", "Shain"],
-  ["Javier", "Baillie"],
-  ["Clinton", "Philbeck"],
-  ["Tyrone", "Agular"],
-  ["Mathew", "Ostrowski"],
-  ["Jamie", "Pascoe"],
-  ["Tyrone", "Urso"],
-  ["Javier", "Butera"],
-  ["Erik", "Geddie"],
-  ["Javier", "Meadow"],
-  ["Fernando", "Shack"],
-  ["Guy", "Cudjoe"],
-  ["Tyrone", "Dille"],
-  ["Julio", "Breed"],
-  ["Jessie", "Strayhorn"],
-  ["Kurt", "Jen"],
-  ["Clayton", "Mattera"],
-  ["Guy", "Salzman"],
-  ["Allan", "Villicana"],
-  ["Javier", "Dunklin"],
-  ["Max", "Pharris"],
-  ["Max", "Casagrande"],
-  ["Jessie", "Frankum"],
-  ["Lonnie", "Harries"],
-  ["Allan", "Markowski"],
-  ["Ted", "Swaby"],
-  ["Mathew", "Ashlock"],
-  ["Lance", "Vester"],
-  ["Scott", "Olsen"]
-]
+Division.create!(:name => "T-Ball" , :sort_order => 5, :color => "#D47F1E")
+Division.create!(:name => "Rookies", :sort_order => 4, :color => "#8C66D9")
+Division.create!(:name => "Minors" , :sort_order => 3, :color => "#4CB052")
+Division.create!(:name => "Majors" , :sort_order => 2, :color => "#AD2D2D")
+Division.create!(:name => "Juniors", :sort_order => 1, :color => "#668CD9")
 
-teams = Team.all
-player_counter = 0
+Team.create!(:name => "Angels", :division => Division.find_by_name("T-Ball"))
+Team.create!(:name => "Pirates", :division => Division.find_by_name("T-Ball"))
+Team.create!(:name => "Royals", :division => Division.find_by_name("T-Ball"))
+Team.create!(:name => "Yankees", :division => Division.find_by_name("T-Ball"))
 
-teams.each do |team|
-  4.times do
-    Player.create!(:first_name => names[player_counter].first, :last_name => names[player_counter].second, :team => team, :division => team.division)
-    player_counter += 1
-  end
-end
+Team.create!(:name => "Braves", :division => Division.find_by_name("Rookies"))
+Team.create!(:name => "Cubs", :division => Division.find_by_name("Rookies"))
+Team.create!(:name => "Reds", :division => Division.find_by_name("Rookies"))
+Team.create!(:name => "Rockies", :division => Division.find_by_name("Rookies"))
+
+Team.create!(:name => "Diamond Backs", :division => Division.find_by_name("Minors"))
+Team.create!(:name => "Indians", :division => Division.find_by_name("Minors"))
+Team.create!(:name => "Phillies", :division => Division.find_by_name("Minors"))
+
+Team.create!(:name => "Dodgers", :division => Division.find_by_name("Majors"))
+Team.create!(:name => "Mets", :division => Division.find_by_name("Majors"))
+Team.create!(:name => "Twins", :division => Division.find_by_name("Majors"))
+
+Field.create!(:name => "Rookie")
+Field.create!(:name => "Minor")
+Field.create!(:name => "Major")

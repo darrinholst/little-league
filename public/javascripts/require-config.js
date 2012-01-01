@@ -1,3 +1,0 @@
-var require = {
-  baseUrl: "/javascripts"
-}

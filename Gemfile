@@ -1,22 +1,26 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.1.3'
 gem 'sqlite3'
 gem 'timeliness'
 gem 'devise'
 gem 'inherited_resources'
-gem 'sass'
 gem 'ri_cal'
+gem 'jquery-rails'
+
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+  gem 'execjs'
+  gem 'therubyracer'
+end
 
 group :test, :development do
-  gem 'rspec'
   gem 'rspec-rails'
-  gem 'ZenTest'
-  gem 'autotest'
-  gem 'autotest-rails'
-  gem 'autotest-growl'
-  gem 'autotest-fsevent'
   gem 'spork'
   gem 'fixjour'
+  gem 'heroku'
+  gem 'taps'
 end
 

@@ -1,5 +1,5 @@
 class Player < ActiveRecord::Base
-  CUTOFF_DATE = Timeliness.parse("04/30/2011")
+  CUTOFF_DATE = Timeliness.parse("04/30/2012")
 
   belongs_to :division
   belongs_to :team
