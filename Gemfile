@@ -1,7 +1,6 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
-gem 'sqlite3'
 gem 'timeliness'
 gem 'devise'
 gem 'inherited_resources'
@@ -17,6 +16,7 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'spork', :git => 'https://github.com/sporkrb/spork.git'
   gem 'fixjour'
