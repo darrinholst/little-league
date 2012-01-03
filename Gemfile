@@ -18,9 +18,12 @@ end
 
 group :test, :development do
   gem 'rspec-rails'
-  gem 'spork'
+  gem 'spork', :git => 'https://github.com/sporkrb/spork.git'
   gem 'fixjour'
   gem 'heroku'
   gem 'taps'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
 end
 
