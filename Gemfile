@@ -27,3 +27,6 @@ group :test, :development do
   gem 'guard-spork'
 end
 
+group :production do
+  gem 'pg'
+end
