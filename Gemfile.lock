@@ -57,7 +57,7 @@ GEM
     ffi (1.0.11)
     fixjour (0.5.3)
       activerecord
-    git-version (0.0.1)
+    git-version (0.0.2)
       grit
     grit (2.4.1)
       diff-lcs (~> 1.1)
