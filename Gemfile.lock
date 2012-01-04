@@ -57,6 +57,11 @@ GEM
     ffi (1.0.11)
     fixjour (0.5.3)
       activerecord
+    git-version (0.0.1)
+      grit
+    grit (2.4.1)
+      diff-lcs (~> 1.1)
+      mime-types (~> 1.15)
     guard (0.10.0)
       ffi (>= 0.5.0)
       thor (~> 0.14.6)
@@ -183,6 +188,7 @@ DEPENDENCIES
   devise
   execjs
   fixjour
+  git-version
   guard
   guard-rspec
   guard-spork

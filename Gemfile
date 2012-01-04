@@ -6,6 +6,7 @@ gem 'devise'
 gem 'inherited_resources'
 gem 'ri_cal'
 gem 'jquery-rails'
+gem 'git-version'
 
 group :assets do
   gem 'sass-rails'
