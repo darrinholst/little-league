@@ -26,4 +26,8 @@ class Player < ActiveRecord::Base
       CUTOFF_DATE.year - birthdate.year - ((CUTOFF_DATE.month > birthdate.month || (CUTOFF_DATE.month == birthdate.month && CUTOFF_DATE.day >= birthdate.day)) ? 0 : 1)
     end
   end
+
+  def shirt_size=(shirt_size)
+    write_attribute(:shirt_size, shirt_size.upcase)
+  end
 end
