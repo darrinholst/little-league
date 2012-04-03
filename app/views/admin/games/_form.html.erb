@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :field_id %><br />
-    <%= f.select :field_id, Field.all.collect{|f| [f.name, f.id ]}, { :include_blank => true } %>
+    <%= f.select :field_id, Field.order(:name).all.collect{|f| [f.name, f.id ]}, { :include_blank => true } %>
   </div>
 
   <div class="field">
