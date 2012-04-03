@@ -1,34 +1,34 @@
 //=require fullcalendar.min
 
-(function() {
-  var displayedDivisions = [];
+// (function() {
+//   var displayedDivisions = [];
 
-  var setDisplayedDivisions = function() {
-    displayedDivisions = $(".filters li.on a").map(function(index, element) {return $(element).html()});
-  }
+//   var setDisplayedDivisions = function() {
+//     displayedDivisions = $(".filters li.on a").map(function(index, element) {return $(element).html()});
+//   }
 
-  setDisplayedDivisions();
+//   setDisplayedDivisions();
 
-  var calendar = $('#calendar').fullCalendar({
-    events: 'calendar/home',
-    weekMode: 'liquid',
-    aspectRatio: 2,
-    header: {
-      left: 'prev,next',
-      center: 'title',
-      right: 'month,agendaWeek,agendaDay'
-    },
+//   var calendar = $('#calendar').fullCalendar({
+//     events: 'calendar/home',
+//     weekMode: 'liquid',
+//     aspectRatio: 2,
+//     header: {
+//       left: 'prev,next',
+//       center: 'title',
+//       right: 'month,agendaWeek,agendaDay'
+//     },
 
-    eventRender: function(event, element) {
-      if($.inArray(event.division, displayedDivisions) < 0) {
-        return false;
-      }
-    }
-  })
+//     eventRender: function(event, element) {
+//       if($.inArray(event.division, displayedDivisions) < 0) {
+//         return false;
+//       }
+//     }
+//   })
 
-  $(".filters li").click(function() {
-    $(this).toggleClass("on").toggleClass("off");
-    setDisplayedDivisions();
-    calendar.fullCalendar("rerenderEvents");
-  });
-})();
+//   $(".filters li").click(function() {
+//     $(this).toggleClass("on").toggleClass("off");
+//     setDisplayedDivisions();
+//     calendar.fullCalendar("rerenderEvents");
+//   });
+// })();
