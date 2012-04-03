@@ -23,7 +23,7 @@ class Game < ActiveRecord::Base
   end
 
   def starts_at=(date)
-    parsed = Timeliness.parse(date, :zone => Time.zone)
+    parsed = Chronic.parse(date)
     write_attribute(:starts_at, parsed.utc) if parsed
   end
 

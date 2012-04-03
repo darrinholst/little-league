@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.3'
+gem 'chronic'
 gem 'timeliness'
 gem 'devise'
 gem 'inherited_resources'
