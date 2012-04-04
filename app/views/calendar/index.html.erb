@@ -1,0 +1,9 @@
+<div id="home">
+  <ul class="filters">
+    <% Division.all.each do |division| %>
+      <li style="background: <%= division.color %>;" class="<%= division.name.downcase %> on"><a href=#><%= division.name %></a></li>
+    <% end %>
+  </ul>
+  <div id="calendar">
+  </div>
+</div>
