@@ -22,6 +22,10 @@ class Game < ActiveRecord::Base
     starts_at.strftime("%a %b %d %l:%M %p").gsub(/ {2,}/, " ") if starts_at
   end
 
+  def starts_at_form
+    starts_at.strftime("%m/%d/%Y %l:%M%P").gsub(/ {2,}/, " ") if starts_at
+  end
+
   def starts_at=(date)
     parsed = Chronic.parse(date)
     write_attribute(:starts_at, parsed.utc) if parsed

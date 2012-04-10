@@ -7,11 +7,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery_ui
+//= require jquery.cookie
 //= require datatables
 //= require inline-edit
 //= require_tree .
 
 $(function() {
+  $.cookie('timezone', new Date().getTimezoneOffset(), {path: '/', expires: 10})
+
   $.ajaxSetup({
     beforeSend: function(xhr) {
       xhr.setRequestHeader("Accept", "application/json")
