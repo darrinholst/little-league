@@ -4,9 +4,6 @@
       <li style="background: <%= division.color %>;" class="<%= division.name.downcase %> on"><a href=#><%= division.name %></a></li>
     <% end %>
   </ul>
-<!--   <div id="calendar">
-  </div>
- -->
 
   <ul class="games">
     <% @games.group_by {|g| g.starts_at.strftime("%a %b %d")}.each do |date, games| %>
@@ -15,7 +12,7 @@
 
         <ul>
           <% games.each do |game| %>
-            <li class="game">
+            <li class="game" data-division="<%= game.division_name %>">
               <div class="time" style="background-color: <%= game.division_color %>"><%= game.starts_at.strftime("%I:%M") %></div>
               <div class="details"><%= game.visiting_team.name + " vs " + game.home_team.name %></div>
             </li>
