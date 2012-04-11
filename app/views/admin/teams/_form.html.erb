@@ -2,16 +2,16 @@
   <%= errors_for(@team) %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :division_id %><br />
+    <%= f.label :division_id %>
     <%= f.select :division_id, Division.all.collect {|d| [ d.name, d.id ] }, { :include_blank => true } %>
   </div>
 
   <div class="actions">
-    <%= f.submit %> or <%= link_to "cancel", admin_teams_path %>
+    <%= f.submit :class => "btn btn-primary"%> or <%= link_to "cancel", admin_teams_path %>
   </div>
 <% end %>

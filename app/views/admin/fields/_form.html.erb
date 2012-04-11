@@ -2,11 +2,11 @@
   <%= errors_for(@field) %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
   <div class="actions">
-    <%= f.submit %> or <%= link_to "cancel", admin_fields_path %>
+    <%= f.submit :class => "btn btn-primary" %> or <%= link_to "cancel", admin_fields_path %>
   </div>
 <% end %>

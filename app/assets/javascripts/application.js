@@ -21,6 +21,10 @@ $(function() {
     }
   });
 
+  if($(".notice").html().length) {
+    $('.notice').slideDown();
+  }
+
   setTimeout(function() {
     if($(".notice").html().length) {
       $('.notice').slideUp();

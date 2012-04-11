@@ -1,13 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+gem 'rails', '3.2.2'
 gem 'chronic'
-gem 'timeliness'
 gem 'devise'
 gem 'inherited_resources'
-gem 'ri_cal'
 gem 'jquery-rails'
-gem 'git-version'
+gem 'ri_cal'
+gem 'twitter-bootstrap-rails'
 
 group :assets do
   gem 'sass-rails'

@@ -2,21 +2,21 @@
   <%= errors_for(@division) %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :sort_order %><br />
+    <%= f.label :sort_order %>
     <%= f.text_field :sort_order %>
   </div>
 
   <div class="field">
-    <%= f.label :color %><br />
+    <%= f.label :color %>
     <%= f.text_field :color %>
   </div>
 
   <div class="actions">
-    <%= f.submit %> or <%= link_to "cancel", admin_divisions_path %>
+    <%= f.submit :class => "btn btn-primary"%> or <%= link_to "cancel", admin_divisions_path %>
   </div>
 <% end %>
