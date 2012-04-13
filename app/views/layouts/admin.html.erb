@@ -17,7 +17,14 @@
             <li class="<%= request.path.eql?(admin_players_path) ? 'active' : '' %>"><%= link_to("Players", admin_players_path) %></li>
             <li class="<%= request.path.eql?(admin_coaches_path) ? 'active' : '' %>"><%= link_to("Coaches", admin_coaches_path) %></li>
             <li class="<%= request.path.eql?(admin_fields_path) ? 'active' : '' %>"><%= link_to("Fields", admin_fields_path) %></li>
-            <li class="<%= request.path.eql?(admin_games_path) ? 'active' : '' %>"><%= link_to("Games", admin_games_path) %></li>
+            <li class="dropdown <%= request.path.eql?(admin_games_path) ? 'active' : '' %>">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Games<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <% Division.all.each do |d| %>
+                  <li><%= link_to(d.name, admin_games_path(:division => d.id)) %></li>
+                <% end %>
+              </ul>
+            </li>
           </ul>
           <ul class="nav pull-right">
             <li><%= link_to("logout", destroy_user_session_path) %></li>

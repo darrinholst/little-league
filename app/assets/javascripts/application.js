@@ -10,6 +10,7 @@
 //= require jquery.cookie
 //= require datatables
 //= require inline-edit
+//= require twitter/bootstrap/bootstrap-dropdown
 //= require_tree .
 
 $(function() {
