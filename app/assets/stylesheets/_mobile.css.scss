@@ -1,9 +1,20 @@
 @media (max-width: 767px) {
-  .visible-phone {
-    display: block;
-  }
-
   .hidden-phone {
     display: none !important;
+  }
+
+  .filters {
+    float: none !important;
+
+    li {
+      display: block !important;
+      float: none !important;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+  }
+
+  .public.container {
+    padding: 0;
   }
 }
