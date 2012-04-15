@@ -1,0 +1,9 @@
+@media (max-width: 767px) {
+  .visible-phone {
+    display: block;
+  }
+
+  .hidden-phone {
+    display: none !important;
+  }
+}
