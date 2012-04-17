@@ -11,5 +11,6 @@ $ ->
 
       for date in $(".games > li")
         $date = $(date)
+        $date.show()
         if($date.find(".game:visible").length) then $date.show() else $date.hide()
 
