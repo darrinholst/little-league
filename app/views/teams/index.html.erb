@@ -4,7 +4,9 @@
 
     <ul class="teams">
       <% division.teams.sort_by{|t| t.name}.each do |team| %>
-        <li class="team"><%= link_to(team.name, team_path(team)) %></li>
+        <% if team.local? %>
+          <li class="team"><%= link_to(team.name, team_path(team)) %></li>
+        <% end %>
       <% end %>
     </ul>
   </div>

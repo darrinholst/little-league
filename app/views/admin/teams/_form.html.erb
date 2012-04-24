@@ -11,6 +11,12 @@
     <%= f.select :division_id, Division.all.collect {|d| [ d.name, d.id ] }, { :include_blank => true } %>
   </div>
 
+  <div class="field">
+    <label class="checkbox">
+      <%= f.check_box :local %> Local?
+    </label>
+  </div>
+
   <div class="actions">
     <%= f.submit :class => "btn btn-primary"%> or <%= link_to "cancel", admin_teams_path %>
   </div>
