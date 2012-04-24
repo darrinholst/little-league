@@ -17,4 +17,14 @@
   .public.container {
     padding: 0;
   }
+
+  div.division {
+    float: none !important;
+    margin-right: 10px !important;
+    margin-bottom: 20px !important;
+
+    h4 {
+      background: #eee;
+    }
+  }
 }
