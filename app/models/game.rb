@@ -31,6 +31,9 @@ class Game < ActiveRecord::Base
     write_attribute(:starts_at, parsed.utc) if parsed
   end
 
+  scope :current, where("starts_at >= ?", Date.today)
+  scope :by_date, order("starts_at")
+
   private
 
   def teams_are_in_the_same_division
