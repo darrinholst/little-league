@@ -44,6 +44,9 @@ module Pll
 
     config.assets.precompile += %w( modernizr.js ga.js )
 
+    # don't connect to the database on precompile
+    config.assets.initialize_on_precompile = false
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
   end
