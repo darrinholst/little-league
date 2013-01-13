@@ -5,6 +5,7 @@ ruby "1.9.3"
 gem 'rails', '3.2.11'
 gem 'chronic'
 gem 'devise'
+gem 'git-version'
 gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'ri_cal'
