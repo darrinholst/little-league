@@ -9,6 +9,20 @@
 @import "fullcalendar";
 @import "mobile";
 
+@media (max-width: 767px) {
+  .hero-unit {
+    padding: 20px;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      line-height: 20px;
+    }
+  }
+}
+
 .public .team .games h4 {
   float: left;
 }
