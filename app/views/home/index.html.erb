@@ -1,26 +1,46 @@
 <div id="home">
-  <ul class="filters">
-    <% Division.all.each do |division| %>
-      <li style="background: <%= division.color %>;" class="<%= division.name.downcase %> on"><a href=#><%= division.name %></a></li>
-    <% end %>
-  </ul>
+  <div class="hero-unit">
+    <h1>Baseball is right around the corner!</h1>
+    <p></p>
+    <p>Sign your kids up for the 2013 Little League season at the following times and locations:</p>
+    <p>
+      <ul>
+        <li>Tuesday, Feb 12th, 4pm - 8pm @ Elementary School</li>
+        <li>Monday, Feb 18th, 4pm - 8pm @ Elementary School</li>
+      </ul>
+    </p>
+    <p>
+      <ul>
+        <li>Thursday, Mar 7th, 4pm - 8pm @ Middle School</li>
+        <li>Monday, Mar 11th, 4pm - 8pm @ Middle School</li>
+      </ul>
+    </p>
+  </div>
 
-  <ul class="games">
-    <% @games.group_by {|g| g.starts_at.strftime("%a %b %d")}.each do |date, games| %>
-      <li>
-        <div class="date"><%= date %></div>
+  <% if @games.any? %>
+    <ul class="filters">
+      <% Division.all.each do |division| %>
+        <li style="background: <%= division.color %>;" class="<%= division.name.downcase %> on"><a href=#><%= division.name %></a></li>
+      <% end %>
+    </ul>
 
-        <ul>
-          <% games.each do |game| %>
-            <li class="game" data-division="<%= game.division_name %>">
-              <table><tr>
-                <td><div class="time" style="background-color: <%= game.division_color %>"><%= game.starts_at.strftime("%I:%M") %></div></td>
-                <td><div class="details"><%= game.visiting_team.name + " vs " + game.home_team.name %> (@<%= game.field_name %>)</div></td>
-              </tr></table>
-            </li>
-          <% end %>
-        </ul>
-      </li>
-    <% end %>
-  </ul>
+    <ul class="games">
+      <% @games.group_by {|g| g.starts_at.strftime("%a %b %d")}.each do |date, games| %>
+        <li>
+          <div class="date"><%= date %></div>
+
+          <ul>
+            <% games.each do |game| %>
+              <li class="game" data-division="<%= game.division_name %>">
+                <table><tr>
+                  <td><div class="time" style="background-color: <%= game.division_color %>"><%= game.starts_at.strftime("%I:%M") %></div></td>
+                  <td><div class="details"><%= game.visiting_team.name + " vs " + game.home_team.name %> (@<%= game.field_name %>)</div></td>
+                </tr></table>
+              </li>
+            <% end %>
+          </ul>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
