@@ -9,6 +9,7 @@ gem 'git-version'
 gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'ri_cal'
+gem 'safe_yaml'
 gem 'twitter-bootstrap-rails'
 
 group :assets do
