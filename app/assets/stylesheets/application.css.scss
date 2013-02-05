@@ -9,6 +9,16 @@
 @import "fullcalendar";
 @import "mobile";
 
+.hero-unit {
+  ul {
+    padding: 10px 0;
+  }
+
+  a {
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 767px) {
   .hero-unit {
     padding: 20px;
