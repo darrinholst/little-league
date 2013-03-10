@@ -1,6 +1,7 @@
 <table class="data" cellspacing="0" cellpadding="0">
   <thead>
     <tr>
+      <th></th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Birthdate</th>
@@ -15,8 +16,9 @@
     </tr>
   </thead>
   <tbody>
-    <% players.each do |player| %>
+    <% players.each_with_index do |player, i| %>
       <tr data-update-url="<%= admin_player_path(player) %>" class="<%= cycle("even", "odd") %>">
+        <td></td>
         <td><%= editable("player[first_name]", player.first_name) %></td>
         <td><%= editable("player[last_name]", player.last_name) %></td>
         <td><%= editable("player[birthdate]", format_birthdate(player.birthdate)) %></td>

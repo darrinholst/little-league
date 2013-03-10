@@ -9,6 +9,7 @@ $(".admin div.players table").dataTable({
   "aaSorting": [[1, "asc"]],
 
   "aoColumns": [
+    null,
     null, //first name
     null, //last name
     {sType: "wrapped-date"}, //birthdate
@@ -20,5 +21,17 @@ $(".admin div.players table").dataTable({
     null, //division
     null, //team
     {bSortable: false} // edit | delete
-  ]
+  ],
+
+  "aoColumnDefs": [
+    { "bSortable": false, "aTargets": [ 0 ] }
+  ],
+
+  "fnDrawCallback": function ( oSettings ) {
+    if ( oSettings.bSorted || oSettings.bFiltered ) {
+      for ( var i=0, iLen=oSettings.aiDisplay.length ; i<iLen ; i++ ) {
+        $('td:eq(0)', oSettings.aoData[ oSettings.aiDisplay[i] ].nTr ).html( i+1 );
+      }
+    }
+  }
 });
