@@ -5,6 +5,10 @@ class Admin::TeamsController < AdminController
     create!{ admin_teams_url }
   end
 
+  def selection
+    render :json => Team.all_local
+  end
+
   protected
 
   def collection

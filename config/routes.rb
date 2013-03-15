@@ -13,6 +13,8 @@ Pll::Application.routes.draw do
     resources :coaches
     resources :fields
     resources :games
+
+    match 'team-selection', :to => 'teams#selection'
   end
 
 

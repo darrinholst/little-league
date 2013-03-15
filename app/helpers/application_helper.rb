@@ -16,6 +16,10 @@ module ApplicationHelper
     content_tag(:span, value, "data-field" => field, :class => "editable")
   end
 
+  def editable_select(field, value)
+    content_tag(:span, value, "data-field" => field, :class => "editable-select")
+  end
+
   def menu(*links)
     unless request.path_info =~ /\/users\//
       content_tag(:ul, :id => "menu") do
