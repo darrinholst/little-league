@@ -43,7 +43,7 @@
 
   <div class="field">
     <%= f.label :team_id %>
-    <%= f.select :team_id, Team.all.collect{|t| [t.name, t.id ]}, { :include_blank => true } %>
+    <%= f.select :team_id, Team.all_local.collect{|t| [t.name, t.id ]}, { :include_blank => true } %>
   </div>
 
   <div class="actions">

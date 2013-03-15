@@ -10,4 +10,8 @@ class Team < ActiveRecord::Base
   def games
     [home_games, away_games].flatten.sort {|x,y| x.starts_at <=> y.starts_at }
   end
+
+  def self.all_local
+    Team.where(local: true).all
+  end
 end
