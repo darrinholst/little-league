@@ -31,9 +31,11 @@
 
           <div class="nav-collapse">
             <ul class="nav">
+              <!--
               <li class="<%= request.path.eql?(root_path) ? 'active' : '' %>"><%= link_to("Home", root_path) %></li>
               <li class="hidden-phone <%= request.path.eql?(calendar_path) ? 'active' : '' %>"><%= link_to("Calendar", calendar_path) %></li>
               <li class="<%= request.path.eql?(teams_path) ? 'active' : '' %>"><%= link_to("Teams", teams_path) %></li>
+              -->
             </ul>
             <ul class="nav pull-right">
               <% if current_user %>

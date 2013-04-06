@@ -1,21 +1,20 @@
 class CalendarController < ApplicationController
   def home
-    @games = []
-    #@games = Game.includes([{:home_team => :division}, :visiting_team]).order("divisions.name")
+    @games = Game.includes([{:home_team => :division}, :visiting_team]).order("divisions.name")
 
-    #if(params[:start] && params[:end])
-      #@games = @games.where(['starts_at >= ? and starts_at <= ?', Time.at(params[:start].to_i), Time.at(params[:end].to_i)])
-    #end
+    if(params[:start] && params[:end])
+      @games = @games.where(['starts_at >= ? and starts_at <= ?', Time.at(params[:start].to_i), Time.at(params[:end].to_i)])
+    end
 
-    #@games = @games.all.map do |game|
-      #{
-        #:title => "#{game.visiting_team.name} at #{game.home_team.name}",
-        #:start => game.starts_at.iso8601,
-        #:allDay => false,
-        #:color => game.division_color,
-        #:division => game.division_name
-      #}
-    #end
+    @games = @games.all.map do |game|
+      {
+        :title => "#{game.visiting_team.name} at #{game.home_team.name}",
+        :start => game.starts_at.iso8601,
+        :allDay => false,
+        :color => game.division_color,
+        :division => game.division_name
+      }
+    end
   end
 
   def ical

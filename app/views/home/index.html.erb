@@ -1,24 +1,10 @@
 <div id="home">
-  <!--
   <div class="hero-unit">
-    <h1>Baseball is right around the corner!</h1>
-    <p>Sign your kids up for the 2013 Little League season at the following times and locations:</p>
-
-    <ul>
-      <li>Tuesday, Feb 12th, 4pm - 8pm @ Elementary School</li>
-      <li>Monday, Feb 18th, 4pm - 8pm @ Elementary School</li>
-    </ul>
-
-    <ul>
-      <li>Thursday, Mar 7th, 4pm - 8pm @ Middle School</li>
-      <li>Monday, Mar 11th, 4pm - 8pm @ Middle School</li>
-    </ul>
-
-    <a href="/2013_registration_form.pdf" class="btn btn-large btn-success">Download the Registration Form</a>
+    <h1>2013 schedule coming soon!</h1>
   </div>
-  -->
 
-  <% if @games.any? %>
+  <% #if @games.any? %>
+  <% if false %>
     <ul class="filters">
       <% Division.all.each do |division| %>
         <li style="background: <%= division.color %>;" class="<%= division.name.downcase %> on"><a href=#><%= division.name %></a></li>
