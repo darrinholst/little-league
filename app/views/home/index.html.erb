@@ -18,7 +18,7 @@
 
           <ul>
             <% games.each do |game| %>
-              <li class="game" data-division="<%= game.division_name %>">
+              <li class="game" <% if game.in_town? %>data-in-town<% end %> data-division="<%= game.division_name %>">
                 <table><tr>
                   <td><div class="time" style="background-color: <%= game.division_color %>"><%= game.starts_at.strftime("%I:%M") %></div></td>
                   <td><div class="details"><%= game.visiting_team.name + " vs " + game.home_team.name %> (@<%= game.field_name %>)</div></td>

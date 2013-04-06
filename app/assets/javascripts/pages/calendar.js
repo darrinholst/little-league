@@ -21,11 +21,19 @@
       },
 
       eventRender: function(event, element) {
-        if($.inArray(event.division, displayedDivisions) < 0) {
+        if($("#home-only").prop("checked") && !event.in_town) {
+          return false;
+        }
+
+        if(event.hide || $.inArray(event.division, displayedDivisions) < 0) {
           return false;
         }
       }
     })
+
+    $("#home-only").change(function() {
+      calendar.fullCalendar("rerenderEvents");
+    });
 
     $(".filters li").click(function() {
       $(this).toggleClass("on").toggleClass("off");

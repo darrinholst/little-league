@@ -6,6 +6,10 @@ class Game < ActiveRecord::Base
   validates_presence_of :home_team, :visiting_team
   validate :teams_are_in_the_same_division
 
+  def in_town?
+    home_team.local?
+  end
+
   def division_name
     home_team.division.name
   end

@@ -12,7 +12,8 @@ class CalendarController < ApplicationController
         :start => game.starts_at.iso8601,
         :allDay => false,
         :color => game.division_color,
-        :division => game.division_name
+        :division => game.division_name,
+        :in_town => game.in_town?
       }
     end
   end
