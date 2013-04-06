@@ -6,10 +6,10 @@ class CalendarController < ApplicationController
       @games = @games.where(['starts_at >= ? and starts_at <= ?', Time.at(params[:start].to_i), Time.at(params[:end].to_i)])
     end
 
-    @games = @games.all.map do |game|
+    @games = @games.all.sort{|a, b| a.division_name <=> b.division_name}.each_with_index.map do |game, i|
       {
         :title => "#{game.visiting_team.name} at #{game.home_team.name}",
-        :start => game.starts_at.iso8601,
+        :start => (game.starts_at + i.seconds).iso8601,
         :allDay => false,
         :color => game.division_color,
         :division => game.division_name,

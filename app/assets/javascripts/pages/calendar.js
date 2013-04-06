@@ -22,11 +22,11 @@
 
       eventRender: function(event, element) {
         if($("#home-only").prop("checked") && !event.in_town) {
-          return false;
+          element.hide()
         }
 
-        if(event.hide || $.inArray(event.division, displayedDivisions) < 0) {
-          return false;
+        if($.inArray(event.division, displayedDivisions) < 0) {
+          element.hide()
         }
       }
     })
