@@ -8,7 +8,7 @@ class CalendarController < ApplicationController
 
     @games = @games.all.sort{|a, b| a.division_name <=> b.division_name}.each_with_index.map do |game, i|
       {
-        :title => "#{game.visiting_team.name} at #{game.home_team.name}",
+        :title => "#{game.visiting_team.name} at #{game.home_team.name} (#{game.field.name})",
         :start => (game.starts_at + i.seconds).iso8601,
         :allDay => false,
         :color => game.division_color,
