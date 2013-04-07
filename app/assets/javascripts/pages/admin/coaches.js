@@ -12,6 +12,7 @@ $(".admin div.coaches table").dataTable({
     null, //first name
     null, //last name
     {bSortable: false}, //phone
+    null, //email
     null, //division
     null, //team
     {bSortable: false}, //edit | delete
