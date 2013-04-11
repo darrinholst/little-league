@@ -1,10 +1,5 @@
 <div id="home">
-  <div class="hero-unit">
-    <h1>2013 schedule coming soon!</h1>
-  </div>
-
-  <% #if @games.any? %>
-  <% if false %>
+  <% if @games.any? %>
     <ul class="filters">
       <% Division.all.each do |division| %>
         <li style="background: <%= division.color %>;" class="<%= division.name.downcase %> on"><a href=#><%= division.name %></a></li>
