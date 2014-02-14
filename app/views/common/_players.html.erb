@@ -27,8 +27,8 @@
         <td><%= editable("player[phone_number]", player.phone_number) %></td>
         <td><%= editable("player[alternate_phone_number]", player.alternate_phone_number) %></td>
         <td><%= editable("player[shirt_size]", player.shirt_size) %></td>
-        <td class="dont-print"><%= player.division_name %></td>
-        <td><%= editable_select("player[team_id]", player.team_name) %></td>
+        <td class="dont-print"><%= editable_select("player[division_id]", player.division_name, '/admin/division-selection') %></td>
+        <td><%= editable_select("player[team_id]", player.team_name, '/admin/team-selection') %></td>
         <td class="dont-print">
           <%= link_to 'Edit', edit_admin_player_path(player) %>&nbsp;|&nbsp;<%= link_to 'Delete', admin_player_path(player), :confirm => "Are you sure?", :method => :delete %>
         </td>

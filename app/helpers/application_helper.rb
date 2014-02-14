@@ -16,8 +16,8 @@ module ApplicationHelper
     content_tag(:span, value, "data-field" => field, :class => "editable")
   end
 
-  def editable_select(field, value)
-    content_tag(:span, value, "data-field" => field, :class => "editable-select")
+  def editable_select(field, value, selection_endpoint)
+    content_tag(:span, value, "data-field" => field, "data-endpoint" => selection_endpoint, :class => "editable-select")
   end
 
   def menu(*links)

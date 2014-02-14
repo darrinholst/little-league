@@ -1,6 +1,10 @@
 class Admin::DivisionsController < AdminController
   inherit_resources
 
+  def selection
+    render :json => Division.all
+  end
+
   protected
 
   def resource
