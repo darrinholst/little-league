@@ -31,6 +31,12 @@
     <%= f.select :team_id, Team.all.collect{|t| [t.name, t.id ]}, { :include_blank => true } %>
   </div>
 
+  <div class="field">
+    <label class="checkbox">
+      <%= f.check_box :head %> Head Coach?
+    </label>
+  </div>
+
   <div class="actions">
     <%= f.submit :class => "btn btn-primary" %> or <%= link_to "cancel", admin_coaches_path %>
   </div>
