@@ -16,8 +16,9 @@ gem 'coffee-rails'
 gem 'uglifier'
 gem 'execjs'
 gem 'therubyracer'
+gem 'pg'
 
-group :test, :development do
+group :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'fixjour'
@@ -25,7 +26,6 @@ end
 
 group :production do
   gem 'thin'
-  gem 'pg'
   gem 'newrelic_rpm'
 end
 
