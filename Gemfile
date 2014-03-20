@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby "1.9.3"
+ruby "2.1.1"
 
 gem 'rails', '3.2.16'
 gem 'chronic'
@@ -11,25 +11,16 @@ gem 'jquery-rails'
 gem 'ri_cal'
 gem 'safe_yaml'
 gem 'twitter-bootstrap-rails'
-
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier'
-  gem 'execjs'
-  gem 'therubyracer'
-end
+gem 'sass-rails'
+gem 'coffee-rails'
+gem 'uglifier'
+gem 'execjs'
+gem 'therubyracer'
 
 group :test, :development do
   gem 'sqlite3'
   gem 'rspec-rails'
-  gem 'spork', :git => 'https://github.com/sporkrb/spork.git'
   gem 'fixjour'
-  gem 'heroku'
-  gem 'taps'
-  gem 'guard'
-  gem 'guard-rspec'
-  gem 'guard-spork'
 end
 
 group :production do
@@ -37,3 +28,4 @@ group :production do
   gem 'pg'
   gem 'newrelic_rpm'
 end
+
