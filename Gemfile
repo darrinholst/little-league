@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 ruby "2.1.1"
 
 gem 'rails', '3.2.16'
+gem 'activeadmin'
 gem 'chronic'
 gem 'devise'
 gem 'git-version'

@@ -35,17 +35,6 @@
               <li class="hidden-phone <%= request.path.eql?(calendar_path) ? 'active' : '' %>"><%= link_to("Calendar", calendar_path) %></li>
               <li class="<%= request.path.eql?(teams_path) ? 'active' : '' %>"><%= link_to("Teams", teams_path) %></li>
             </ul>
-            <ul class="nav pull-right">
-              <% if current_user %>
-                <li><%= link_to("logout", destroy_user_session_path) %></li>
-
-                <% if current_user.admin? %>
-                  <li><%= link_to("admin", admin_divisions_path) %></li>
-                <% end %>
-              <% else %>
-                <li><%= link_to("login", new_user_session_path) %></li>
-              <% end %>
-            </ul>
           </div>
         </div>
       </div>
