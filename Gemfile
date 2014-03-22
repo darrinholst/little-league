@@ -5,12 +5,9 @@ ruby "2.1.1"
 gem 'rails', '3.2.16'
 gem 'activeadmin'
 gem 'chronic'
-gem 'devise'
 gem 'git-version'
-gem 'inherited_resources'
 gem 'jquery-rails'
 gem 'ri_cal'
-gem 'safe_yaml'
 gem 'twitter-bootstrap-rails'
 gem 'sass-rails'
 gem 'coffee-rails'
@@ -18,10 +15,12 @@ gem 'uglifier'
 gem 'execjs'
 gem 'therubyracer'
 gem 'pg'
+gem 'unicorn'
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'foreman'
 end
 
 group :test do
@@ -31,7 +30,6 @@ group :test do
 end
 
 group :production do
-  gem 'thin'
   gem 'newrelic_rpm'
 end
 

@@ -61,7 +61,6 @@ GEM
       execjs
     coffee-script-source (1.3.1)
     commonjs (0.2.5)
-    daemons (1.1.9)
     debug_inspector (0.0.2)
     devise (2.0.4)
       bcrypt-ruby (~> 3.0)
@@ -69,12 +68,15 @@ GEM
       railties (~> 3.1)
       warden (~> 1.1.1)
     diff-lcs (1.1.3)
+    dotenv (0.10.0)
     erubis (2.7.0)
-    eventmachine (1.0.0)
     execjs (1.3.0)
       multi_json (~> 1.0)
     fixjour (0.5.3)
       activerecord
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
     formtastic (2.2.1)
       actionpack (>= 3.0)
     git-version (0.0.2)
@@ -96,6 +98,7 @@ GEM
     kaminari (0.15.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kgio (2.9.2)
     less (2.1.0)
       commonjs (~> 0.2.0)
       therubyracer (~> 0.10.0)
@@ -141,6 +144,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
+    raindrops (0.13.0)
     rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -160,7 +164,6 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.9.0)
-    safe_yaml (0.5.2)
     sass (3.3.3)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -174,10 +177,6 @@ GEM
     sqlite3 (1.3.5)
     therubyracer (0.10.2)
       libv8 (~> 3.3.10)
-    thin (1.5.0)
-      daemons (>= 1.0.9)
-      eventmachine (>= 0.12.6)
-      rack (>= 1.0.0)
     thor (0.18.1)
     tilt (1.4.1)
     treetop (1.4.15)
@@ -191,6 +190,10 @@ GEM
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    unicorn (4.8.2)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     warden (1.1.1)
       rack (>= 1.0)
 
@@ -203,21 +206,19 @@ DEPENDENCIES
   binding_of_caller
   chronic
   coffee-rails
-  devise
   execjs
   fixjour
+  foreman
   git-version
-  inherited_resources
   jquery-rails
   newrelic_rpm
   pg
   rails (= 3.2.16)
   ri_cal
   rspec-rails
-  safe_yaml
   sass-rails
   sqlite3
   therubyracer
-  thin
   twitter-bootstrap-rails
   uglifier
+  unicorn

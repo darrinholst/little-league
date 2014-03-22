@@ -17,7 +17,12 @@
 //   .status_tag { background: #6090DB; }
 //
 
-#title_bar .action_items a, form input[type=submit], form.filter_form a.clear_filters_btn {
+#title_bar .action_items a,
+form input[type=submit],
+form.filter_form a.clear_filters_btn,
+#header ul.tabs > li a,
+li.cancel a,
+form fieldset.actions li.cancel a {
   border-radius: 3px;
 }
 

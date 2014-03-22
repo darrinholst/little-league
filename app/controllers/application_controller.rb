@@ -2,6 +2,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :set_time_zone
 
+  def access_denied(exception)
+    render text: 'Not Authorized', status: 403
+  end
+
   private
 
   def set_time_zone
