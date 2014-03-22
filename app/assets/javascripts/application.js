@@ -8,12 +8,12 @@
 //= require jquery_ujs
 //= require jquery_ui
 //= require jquery.cookie
-//= require datatables
 //= require inline-edit
 //= require inline-edit-select
 //= require twitter/bootstrap/bootstrap-collapse
 //= require twitter/bootstrap/bootstrap-dropdown
-//= require_tree .
+//= require calendar
+//= require division_filters
 
 $(function() {
   $.cookie('timezone', new Date().getTimezoneOffset(), {path: '/', expires: 10})
