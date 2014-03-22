@@ -27,8 +27,8 @@ if_changed("db/schema.rb") do
   system "rake db:migrate"
 end
 
-puts "Seeding database..."
-system "rake db:seed"
+#puts "Seeding database..."
+#system "rake db:seed"
 
 exec "bundle exec foreman start"
 
