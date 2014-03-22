@@ -42,7 +42,7 @@ module Pll
     # Enable the asset pipeline
     config.assets.enabled = true
 
-    config.assets.precompile += %w( modernizr.js ga.js )
+    config.assets.precompile += %w( modernizr.js ga.js active_admin.css.scss active_admin.js )
 
     # don't connect to the database on precompile
     config.assets.initialize_on_precompile = false

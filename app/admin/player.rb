@@ -1,15 +1,24 @@
 ActiveAdmin.register Player do
-  config.per_page = 200
-
-  index do
-    column :first_name
-    column :last_name
-    column :birthdate
-    column :age
+  index do |t|
+    column 'First', :first_name, sortable: 'first_name' do |resource|
+      editable_text_column resource, :first_name
+    end
+    column 'Last', :last_name
+    column :birthdate do |resource|
+      resource.birthdate.strftime('%m/%d/%Y') rescue ''
+    end
+    column :age, sortable: 'birthdate'
     column :parents
-    column :phone_number
-    column :alternate_phone_number
-    column :shirt_size
+    column 'Phone', :phone_number
+    column 'Alternate Phone', :alternate_phone_number
+    column 'Shirt', :shirt_size
+    column :division
+    column :team
     default_actions
   end
+
+  filter :division
+  filter :team
+  filter :first_name
+  filter :last_name
 end

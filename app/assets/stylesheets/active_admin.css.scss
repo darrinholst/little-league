@@ -15,3 +15,10 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+//
+
+#title_bar .action_items a, form input[type=submit], form.filter_form a.clear_filters_btn {
+  border-radius: 3px;
+}
+
+
