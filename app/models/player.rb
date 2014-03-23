@@ -4,6 +4,8 @@ class Player < ActiveRecord::Base
   belongs_to :division
   belongs_to :team
 
+  scope :youngest_first, -> { order('birthdate desc') }
+
   def name
     "#{first_name} #{last_name}"
   end
@@ -14,6 +16,10 @@ class Player < ActiveRecord::Base
 
   def team_name
     team ? team.name : ""
+  end
+
+  def birthdate_display
+    birthdate.strftime('%m/%d/%Y') rescue ''
   end
 
   def birthdate=(birthdate)
