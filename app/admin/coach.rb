@@ -14,11 +14,11 @@ ActiveAdmin.register Coach do
   index do
     column 'Division' , :division      , sortable: 'divisions.sort_order' do |r| r.division.name end
     column 'Team'     , :team          , sortable: 'teams.name'
+    column ''         , :head          , sortable: false                  do |r| r.head? ? '*' : '' end
     column 'First'    , :first_name    , sortable: 'first_name'           do |r| editable_text_column(r, :first_name) end
     column 'Last'     , :last_name     , sortable: 'last_name'            do |r| editable_text_column(r, :last_name) end
     column 'Email'    , :email_address , sortable: 'email_address'        do |r| editable_text_column(r, :email_address) end
     column 'Phone'    , :phone_number  , sortable: 'phone_number'         do |r| editable_text_column(r, :phone_number) end
-    column 'Head?'    , :head
     default_actions
   end
 

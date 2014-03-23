@@ -10,7 +10,7 @@ ActiveAdmin.register Game do
   index do
     column :visiting_team
     column :home_team
-    column :field
+    column :field do |r| r.field.name end
     column :starts_at
     default_actions
   end
