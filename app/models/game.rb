@@ -3,7 +3,7 @@ class Game < ActiveRecord::Base
   belongs_to :home_team, :class_name => 'Team'
   belongs_to :field
 
-  validates_presence_of :home_team, :visiting_team
+  validates_presence_of :home_team, :visiting_team, :field, :starts_at
   validate :teams_are_in_the_same_division
 
   def in_town?

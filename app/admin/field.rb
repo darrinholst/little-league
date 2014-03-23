@@ -1,4 +1,15 @@
 ActiveAdmin.register Field do
+  actions :index, :new, :create, :update, :edit, :destroy
+
+  config.filters = false
+  config.sort_order = '!!!!GRRRR, I WILL JUST HANDLE IT MYSELF. GOOD FUCKING GOD!!!!'
+
+  controller do
+    def scoped_collection
+      Field.order('name asc')
+    end
+  end
+
   index do
     column :name
     default_actions
