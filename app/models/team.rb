@@ -15,3 +15,4 @@ class Team < ActiveRecord::Base
     Team.where(local: true).all
   end
 end
+

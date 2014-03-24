@@ -4,7 +4,11 @@ class Player < ActiveRecord::Base
   belongs_to :division
   belongs_to :team
 
+  validates_presence_of :first_name
+  validates_presence_of :last_name
+
   scope :youngest_first, -> { order('birthdate desc') }
+  scope :by_team, -> { includes(:team).order('teams.name, birthdate desc') }
 
   def name
     "#{first_name} #{last_name}"
@@ -37,3 +41,4 @@ class Player < ActiveRecord::Base
     write_attribute(:shirt_size, shirt_size.upcase)
   end
 end
+

@@ -37,3 +37,4 @@ class CalendarController < ApplicationController
     render :text => calendar.export
   end
 end
+

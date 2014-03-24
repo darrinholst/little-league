@@ -18,3 +18,4 @@ class ApplicationController < ActionController::Base
     Chronic.time_class = Time.zone
   end
 end
+

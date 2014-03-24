@@ -1,6 +1,6 @@
 module IndexAsTableExtensions
-  def editable_text_column(resource, attr)
-    %{<span data-field="#{resource.class.model_name.singular}[#{attr}]" class="editable">#{resource.send(attr)}</span>}.html_safe
+  def editable_text_column(resource, attr, value = nil)
+    %{<span data-field="#{resource.class.model_name.singular}[#{attr}]" class="editable">#{value || resource.send(attr)}</span>}.html_safe
   end
 end
 
