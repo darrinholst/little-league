@@ -1,6 +1,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
+  config.secret_key = Rails.env.production? ? ENV['DEVISE_SECRET_KEY'] : 'super secret'
   config.case_insensitive_keys = []
   config.reset_password_within = 6.hours
 
@@ -42,12 +43,6 @@ Devise.setup do |config|
   # using other encryptors, it sets how many times you want the password re-encrypted.
   config.stretches = 10
 
-  # Define which will be the encryption algorithm. Devise also supports encryptors
-  # from others authentication tools as :clearance_sha1, :authlogic_sha512 (then
-  # you should set stretches above to 20 for default behavior) and :restful_authentication_sha1
-  # (then you should set stretches to 10, and copy REST_AUTH_SITE_KEY to pepper)
-  config.encryptor = :bcrypt
-
   # Setup a pepper to generate the encrypted password.
   config.pepper = "77f2b6ff535cfb8ba1e6ddae62c951c4d0ff525944bf1c7890d8880e9e80ad1e1490265367c29edff6fab3b131ee60d5b9a2fc4cd265d073d38449cee9392136"
 
@@ -63,7 +58,6 @@ Devise.setup do |config|
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
   # config.remember_for = 2.weeks
-  Devise.use_salt_as_remember_token = true
 
   # If true, a valid remember token can be re-used between multiple browsers.
   # config.remember_across_browsers = true

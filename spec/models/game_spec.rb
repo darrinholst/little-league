@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Game do
-  let(:game) {new_game}
+  let(:game) {build(:game)}
 
   before(:each) do
     game.should be_valid
@@ -23,8 +23,8 @@ describe Game do
   end
 
   it "should require teams to be part of the same division" do
-    game.visiting_team = new_team(:division => new_division(:name => "rookies"))
-    game.home_team = new_team(:division => new_division(:name => "minors"))
+    game.visiting_team = build(:team, division: build(:division, name: 'rookies'))
+    game.home_team = build(:team, division: build(:division, name: 'minors'))
     should_be_invalid "Teams must be in the same division"
   end
 

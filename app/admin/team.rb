@@ -17,7 +17,6 @@ ActiveAdmin.register Team do
       links << link_to(I18n.t('active_admin.delete'), resource_path(resource), :method => :delete, :data => {:confirm => I18n.t('active_admin.delete_confirmation')}, :class => "member_link delete_link")
       links
     end
-    default_actions
   end
 
   show do
