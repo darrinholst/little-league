@@ -1,12 +1,6 @@
 ActiveAdmin.register Division do
   config.filters = false
-  config.sort_order = '!'
-
-  controller do
-    def scoped_collection
-      Division.order('sort_order desc')
-    end
-  end
+  config.sort_order = 'sort_order_desc'
 
   index do
     column :name do |resource| link_to resource.name, resource_path(resource) end

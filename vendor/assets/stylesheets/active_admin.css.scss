@@ -17,7 +17,7 @@
 //   .status_tag { background: #6090DB; }
 //
 
-#title_bar .action_items a,
+#title_bar .action_items span.action_item > a,
 form input[type=submit],
 form.filter_form a.clear_filters_btn,
 #header ul.tabs > li a,

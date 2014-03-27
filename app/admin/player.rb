@@ -1,11 +1,11 @@
 ActiveAdmin.register Player do
   actions :index, :new, :create, :update, :edit, :destroy
 
-  config.sort_order = '!'
+  config.sort_order = 'birthdate_desc'
 
   controller do
     def scoped_collection
-      Player.includes(:division, :team).order('birthdate desc')
+      Player.includes(:division, :team)
     end
   end
 
