@@ -1,4 +1,5 @@
 ActiveAdmin.register Coach do
+  permit_params :first_name, :last_name, :phone_number, :email_address, :division_id, :team_id, :head
   actions :index, :new, :create, :update, :edit, :destroy
 
   # allows us to initially use the multiple column sort order below

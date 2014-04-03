@@ -1,4 +1,5 @@
 ActiveAdmin.register Division do
+  permit_params :name, :sort_order, :color
   config.filters = false
   config.sort_order = 'sort_order_desc'
 

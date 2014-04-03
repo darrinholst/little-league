@@ -1,4 +1,5 @@
 ActiveAdmin.register Field do
+  permit_params :name
   actions :index, :new, :create, :update, :edit, :destroy
 
   config.filters = false

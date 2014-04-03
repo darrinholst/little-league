@@ -1,4 +1,5 @@
 ActiveAdmin.register Player do
+  permit_params :first_name, :last_name, :division_id, :team_id, :birthdate, :parents, :phone_number, :alternate_phone_number, :shirt_size
   actions :index, :new, :create, :update, :edit, :destroy
 
   config.sort_order = 'birthdate_desc'

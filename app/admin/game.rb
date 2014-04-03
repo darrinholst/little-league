@@ -1,4 +1,5 @@
 ActiveAdmin.register Game do
+  permit_params :visiting_team_id, :home_team_id, :field_id, :starts_at
   actions :index, :new, :create, :update, :edit, :destroy
 
   controller do

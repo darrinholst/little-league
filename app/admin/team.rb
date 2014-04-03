@@ -1,4 +1,5 @@
 ActiveAdmin.register Team do
+  permit_params :name, :division_id, :local
   config.sort_order = '!'
 
   controller do
