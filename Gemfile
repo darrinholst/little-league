@@ -4,18 +4,15 @@ ruby "2.1.1"
 
 gem 'rails', '4.0.4'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'bootstrap-sass'
+gem 'coffee-rails'
 gem 'chronic'
 gem 'git-version'
 gem 'jquery-rails'
-gem 'ri_cal'
-gem 'twitter-bootstrap-rails'
-gem 'sass-rails'
-gem 'less-rails'
-gem 'coffee-rails'
-gem 'uglifier'
-gem 'execjs'
-gem 'therubyracer'
 gem 'pg'
+gem 'ri_cal'
+gem 'sass-rails'
+gem 'uglifier'
 gem 'unicorn'
 
 group :development do

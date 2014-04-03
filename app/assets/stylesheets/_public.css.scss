@@ -39,6 +39,23 @@
         background: black;
       }
     }
+
+    @media (max-width: 767px) {
+      .hidden-phone {
+        display: none !important;
+      }
+
+      .filters {
+        float: none !important;
+
+        li {
+          display: block !important;
+          float: none !important;
+          margin-bottom: 2px;
+          text-align: center;
+        }
+      }
+    }
   }
 
   .games {
@@ -65,4 +82,19 @@
       margin: 10px 0 20px;
     }
   }
+}
+
+div.division {
+  margin-right: 50px;
+  margin-bottom: 10px;
+  float: left;
+}
+
+div.division h4 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+div.division .teams {
+  margin: 0;
 }

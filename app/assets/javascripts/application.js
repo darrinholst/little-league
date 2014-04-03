@@ -2,8 +2,8 @@
 //= require jquery_ujs
 //= require jquery_ui
 //= require jquery.cookie
-//= require twitter/bootstrap/bootstrap-collapse
-//= require twitter/bootstrap/bootstrap-dropdown
+//= require bootstrap/collapse
+//= require bootstrap/dropdown
 //
 //= require inline-edit
 //= require inline-edit-select
