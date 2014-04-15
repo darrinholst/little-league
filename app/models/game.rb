@@ -6,6 +6,12 @@ class Game < ActiveRecord::Base
   validates_presence_of :home_team, :visiting_team, :field, :starts_at
   validate :teams_are_in_the_same_division
 
+  scope :in_division, ->(name) {joins(:home_team).references(:teams).where('teams.division_id' => Division.name_matches(name))}
+
+  def includes_local_team?
+    home_team.local? || visiting_team.local?
+  end
+
   def in_town?
     home_team.local?
   end

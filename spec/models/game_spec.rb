@@ -32,4 +32,31 @@ describe Game do
     game.should_not be_valid
     game.errors.full_messages.join(" ").should == message
   end
+
+  it 'should find all rookie games' do
+    rookies = create(:division, name: 'Rookies')
+    minors = create(:division, name: 'Minors')
+
+    rookies_game = create(:game, home_team: create(:team, division: rookies), visiting_team: create(:team, division: rookies))
+    minors_game = create(:game, home_team: create(:team, division: minors), visiting_team: create(:team, division: minors))
+
+    rookies_games = Game.in_division('rookies')
+
+    rookies_games.size.should == 1
+    rookies_games.should include rookies_game
+  end
+
+  it 'should tell if a game does not include a local team' do
+    game.includes_local_team?.should be_false
+  end
+
+  it 'should tell if a games home team is local' do
+    game.home_team.local = true
+    game.includes_local_team?.should be_true
+  end
+
+  it 'should tell if a games visiting team is local' do
+    game.visiting_team.local = true
+    game.includes_local_team?.should be_true
+  end
 end
