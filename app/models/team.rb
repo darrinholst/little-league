@@ -9,6 +9,10 @@ class Team < ActiveRecord::Base
 
   scope :in_division, ->(name) {where(division_id: Division.name_matches(name))}
 
+  def concessionable_players
+    players.available_for_concessions
+  end
+
   def self.name_matches(q)
     where(arel_table[:name].matches(q)).first
   end

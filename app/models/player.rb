@@ -9,6 +9,7 @@ class Player < ActiveRecord::Base
 
   scope :youngest_first, -> { order('birthdate desc') }
   scope :by_team, -> { includes(:team).order('teams.name, birthdate desc') }
+  scope :available_for_concessions, -> { where(concessions_exempt: false) }
 
   def name
     "#{first_name} #{last_name}"

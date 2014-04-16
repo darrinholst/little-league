@@ -16,6 +16,7 @@ gem 'uglifier'
 gem 'unicorn'
 
 group :development do
+  gem 'awesome_print'
   gem 'foreman'
 end
 

@@ -2,6 +2,12 @@ class Game < ActiveRecord::Base
   belongs_to :visiting_team, :class_name => 'Team'
   belongs_to :home_team, :class_name => 'Team'
   belongs_to :field
+  belongs_to :home_team_concessions_1, :class_name => 'Player'
+  belongs_to :home_team_concessions_2, :class_name => 'Player'
+  belongs_to :visiting_team_concessions_1, :class_name => 'Player'
+  belongs_to :visiting_team_concessions_2, :class_name => 'Player'
+  belongs_to :home_plate_umpire, :class_name => 'Player'
+  belongs_to :base_umpire, :class_name => 'Player'
 
   validates_presence_of :home_team, :visiting_team, :field, :starts_at
   validate :teams_are_in_the_same_division
