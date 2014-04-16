@@ -8,6 +8,7 @@ class Team < ActiveRecord::Base
   validates_presence_of :name
 
   scope :in_division, ->(name) {where(division_id: Division.name_matches(name))}
+  scope :local, -> {where(local: true)}
 
   def concessionable_players
     players.available_for_concessions

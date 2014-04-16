@@ -17,13 +17,23 @@ ActiveAdmin.register Game do
     column :home_team
     column :field do |r| r.field.name end
     column :starts_at
+    column 'H Concessions' do |g| g.home_team_concessions_1.name rescue '' end
+    column 'H Concessions' do |g| g.home_team_concessions_2.name rescue '' end
+    column 'V Concessions' do |g| g.visiting_team_concessions_1.name rescue '' end
+    column 'V Concessions' do |g| g.visiting_team_concessions_2.name rescue '' end
+    column 'Plate Ump' do |g| g.home_plate_umpire.name rescue '' end
+    column 'Base Ump' do |g| g.base_umpire.name rescue '' end
     default_actions
   end
 
-  filter :visiting_team
-  filter :home_team
-  filter :field
+  filter :visiting_team_id_or_home_team_id, as: :select, collection: Team.includes(:division).local.order('divisions.sort_order desc, teams.name'), label: 'Team'
   filter :home_team_local, as: :boolean, label: 'In Perry?'
+
+  before_filter :only => [:index] do
+    if params['commit'].blank?
+       params['q'] = {:home_team_local_eq => '1'}
+    end
+  end
 
   form do |f|
     f.semantic_errors
