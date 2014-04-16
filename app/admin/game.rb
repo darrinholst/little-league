@@ -30,7 +30,7 @@ ActiveAdmin.register Game do
   filter :home_team_local, as: :boolean, label: 'In Perry?'
 
   before_filter :only => [:index] do
-    if params['commit'].blank?
+    if request.format.html? && params['commit'].blank?
        params['q'] = {:home_team_local_eq => '1'}
     end
   end
