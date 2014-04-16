@@ -41,6 +41,7 @@ ActiveAdmin.register Team do
       column 'Phone', :phone_number
       column 'Alternate Phone', :alternate_phone_number
       column 'Shirt', :shirt_size
+      column 'Concessions Exempt?', :concessions_exempt do |r| editable_check_box_column(r, :concessions_exempt) end
     end
   end
 
