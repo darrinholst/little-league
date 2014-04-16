@@ -8,7 +8,7 @@ ActiveAdmin.register Game do
 
   controller do
     def scoped_collection
-      Game.includes(:field, {:home_team => [:division]}, :visiting_team).order('starts_at, home_team.division.sort_order')
+      Game.includes([:field, {:home_team => [:division]}, :visiting_team]).order('starts_at, divisions.sort_order').references(:team)
     end
   end
 
