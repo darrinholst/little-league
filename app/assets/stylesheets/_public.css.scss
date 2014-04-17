@@ -10,10 +10,22 @@
     margin: 0;
     margin-bottom: 10px;
 
+    @media (max-width: $screen-xs-max) {
+      float: none;
+    }
+
     li {
       float: left;
       margin-left: 10px;
       border: 1px solid black;
+
+      @media (max-width: $screen-xs-max) {
+        display: block;
+        float: none;
+        margin-left: 0;
+        margin-bottom: 5px;
+        text-align: center;
+      }
 
       &.off {
         background: #bbb !important;
@@ -37,23 +49,6 @@
         width: 10px;
         height: 10px;
         background: black;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .hidden-phone {
-        display: none !important;
-      }
-
-      .filters {
-        float: none !important;
-
-        li {
-          display: block !important;
-          float: none !important;
-          margin-bottom: 2px;
-          text-align: center;
-        }
       }
     }
   }
@@ -97,4 +92,10 @@ div.division h4 {
 
 div.division .teams {
   margin: 0;
+}
+
+@media (max-width: $screen-xs-max) {
+  .hidden-phone {
+    display: none !important;
+  }
 }
