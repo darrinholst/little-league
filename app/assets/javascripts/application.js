@@ -4,11 +4,7 @@
 //= require jquery.cookie
 //= require bootstrap/collapse
 //= require bootstrap/dropdown
-//
-//= require inline-edit
-//= require inline-edit-select
 //= require notification-hider
-//
 //= require calendar
 //= require division_filters
 

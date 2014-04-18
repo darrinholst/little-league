@@ -7,6 +7,10 @@ module TableExtensions
     value ||= resource.send(attr)
     %{<span data-field="#{resource.class.model_name.singular}[#{attr}]" class="editable checkbox status_tag #{value ? 'yes': 'no'}">#{value ? 'yes' : 'no'}</span>}.html_safe
   end
+
+  def editable_select(resource, attr, endpoint, value = nil)
+    %{<span data-endpoint="#{endpoint}" data-field="#{resource.class.model_name.singular}[#{attr}]" class="editable-select">#{value || resource.send(attr)}</span>}.html_safe
+  end
 end
 
 class ActiveAdmin::Views::IndexAsTable

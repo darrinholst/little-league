@@ -17,12 +17,12 @@ ActiveAdmin.register Game do
     column :home_team
     column :field do |r| r.field.name end
     column :starts_at
-    column 'H Concessions' do |g| g.home_team_concessions_1.name rescue '' end
-    column 'H Concessions' do |g| g.home_team_concessions_2.name rescue '' end
-    column 'V Concessions' do |g| g.visiting_team_concessions_1.name rescue '' end
-    column 'V Concessions' do |g| g.visiting_team_concessions_2.name rescue '' end
-    column 'Plate Ump' do |g| g.home_plate_umpire.name rescue '' end
-    column 'Base Ump' do |g| g.base_umpire.name rescue '' end
+    column 'H Concessions' do |g| editable_select(g, :home_team_concessions_1_id, concessionable_players_admin_team_path(g.home_team), (g.home_team_concessions_1.name rescue '')) end
+    column 'H Concessions' do |g| editable_select(g, :home_team_concessions_2_id, concessionable_players_admin_team_path(g.home_team), (g.home_team_concessions_2.name rescue '')) end
+    column 'V Concessions' do |g| editable_select(g, :visiting_team_concessions_1_id, concessionable_players_admin_team_path(g.visiting_team), (g.visting_team_concessions_1.name rescue '')) end
+    column 'V Concessions' do |g| editable_select(g, :visiting_team_concessions_2_id, concessionable_players_admin_team_path(g.visiting_team), (g.visting_team_concessions_2.name rescue '')) end
+    column 'Plate Ump' do |g| editable_select(g, :home_plate_umpire_id, concessionable_players_admin_team_path(g.home_team), (g.home_plate_umpire.name rescue '')) end
+    column 'Base Ump' do |g| editable_select(g, :base_umpire_id, concessionable_players_admin_team_path(g.home_team), (g.base_umpire.name rescue '')) end
     default_actions
   end
 

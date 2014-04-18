@@ -2,6 +2,10 @@ ActiveAdmin.register Team do
   permit_params :name, :division_id, :local
   config.sort_order = '!'
 
+  member_action :concessionable_players, :method => :get do
+    render json: Team.find(params[:id]).concessionable_players.map {|p| {id: p.id, name: p.name}}
+  end
+
   controller do
     def scoped_collection
       Team.includes(:division).order('divisions.sort_order desc, teams.name asc')
