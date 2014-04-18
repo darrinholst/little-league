@@ -11,6 +11,14 @@ class Player < ActiveRecord::Base
   scope :by_team, -> { includes(:team).order('teams.name, birthdate desc') }
   scope :available_for_concessions, -> { where(concessions_exempt: false) }
 
+  def concessions_count
+    Game.where('home_team_concessions_1_id = ? or home_team_concessions_2_id = ? or visiting_team_concessions_1_id = ? or visiting_team_concessions_2_id = ?', id, id, id, id).count
+  end
+
+  def umpire_count
+    Game.where('home_plate_umpire_id = ? or base_umpire_id = ?', id, id).count
+  end
+
   def name
     "#{first_name} #{last_name}"
   end

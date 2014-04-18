@@ -2,6 +2,12 @@ ActiveAdmin.register Team do
   permit_params :name, :division_id, :local
   config.sort_order = '!'
 
+  before_filter :only => [:index] do
+    if request.format.html? && params['commit'].blank?
+       params['q'] = {:local_eq => '1'}
+    end
+  end
+
   member_action :concessionable_players, :method => :get do
     render json: Team.find(params[:id]).concessionable_players.map {|p| {id: p.id, name: p.name}}
   end
@@ -46,6 +52,26 @@ ActiveAdmin.register Team do
       column 'Alternate Phone', :alternate_phone_number
       column 'Shirt', :shirt_size
       column 'Concessions Exempt?', :concessions_exempt do |r| editable_check_box_column(r, :concessions_exempt) end
+      column 'Concessioning' do |r| r.concessions_count end
+      column 'Umpiring' do |r| r.umpire_count end
+    end
+
+    br
+
+    h3 'Games'
+    table_for resource.games, class: 'index_table' do
+      i = 0
+      column '' do |r| i += 1 end
+      column :visiting_team
+      column :home_team
+      column :field
+      column :starts_at
+      column 'H Concessions' do |g| editable_select(g, :home_team_concessions_1_id, concessionable_players_admin_team_path(g.home_team), (g.home_team_concessions_1.name rescue '')) if g.home_team == resource end
+      column 'H Concessions' do |g| editable_select(g, :home_team_concessions_2_id, concessionable_players_admin_team_path(g.home_team), (g.home_team_concessions_2.name rescue '')) if g.home_team == resource end
+      column 'V Concessions' do |g| editable_select(g, :visiting_team_concessions_1_id, concessionable_players_admin_team_path(g.visiting_team), (g.visiting_team_concessions_1.name rescue '')) if g.visiting_team == resource end
+      column 'V Concessions' do |g| editable_select(g, :visiting_team_concessions_2_id, concessionable_players_admin_team_path(g.visiting_team), (g.visiting_team_concessions_2.name rescue '')) if g.visiting_team == resource end
+      column 'Plate Ump' do |g| editable_select(g, :home_plate_umpire_id, concessionable_players_admin_team_path(g.home_team), (g.home_plate_umpire.name rescue '')) if g.home_team == resource end
+      column 'Base Ump' do |g| editable_select(g, :base_umpire_id, concessionable_players_admin_team_path(g.home_team), (g.base_umpire.name rescue '')) if g.home_team == resource end
     end
   end
 
