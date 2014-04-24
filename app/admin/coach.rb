@@ -13,7 +13,7 @@ ActiveAdmin.register Coach do
   end
 
   index do
-    column 'Division' , :division      , sortable: 'divisions.sort_order' do |r| r.division.name end
+    column 'Division' , :division      , sortable: 'divisions.sort_order' do |r| r.division_name end
     column 'Team'     , :team          , sortable: 'teams.name'
     column ''         , :head          , sortable: false                  do |r| r.head? ? '*' : '' end
     column 'First'    , :first_name    , sortable: 'first_name'           do |r| editable_text_column(r, :first_name) end
@@ -25,4 +25,16 @@ ActiveAdmin.register Coach do
 
   filter :division
   filter :team
+
+  form do |f|
+    f.inputs do
+      f.input :team, :as => :select, :collection => option_groups_from_collection_for_select(Division.all, :teams, :name, :id, :name, f.object.team.try(:id))
+      f.input :first_name
+      f.input :last_name
+      f.input :phone_number
+      f.input :email_address
+    end
+
+    f.actions
+  end
 end

@@ -19,5 +19,10 @@ class Coach < ActiveRecord::Base
   def team_name
     team ? team.name : ""
   end
+
+  def team_id=(id)
+    super
+    self.division = team ? team.division : nil
+  end
 end
 
