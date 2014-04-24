@@ -1,5 +1,5 @@
 class Division < ActiveRecord::Base
-  has_many :teams, order: 'name'
+  has_many :teams, -> { order('name') }
   has_many :players
   has_many :coaches
 

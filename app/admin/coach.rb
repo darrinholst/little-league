@@ -33,6 +33,7 @@ ActiveAdmin.register Coach do
       f.input :last_name
       f.input :phone_number
       f.input :email_address
+      f.input :head
     end
 
     f.actions
