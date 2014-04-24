@@ -1,0 +1,19 @@
+<table class="table table-bordered">
+  <% @divisions.each do |division| %>
+    <tr>
+      <td colspan="3"><strong><%= division.name %></strong></td>
+    </tr>
+
+    <% division.teams.each do |team| %>
+      <% team.coaches.each do |coach| %>
+        <% if coach.head? %>
+          <tr>
+            <td><%= team.name %></td>
+            <td><%= coach.name %></td>
+            <td><%= link_to coach.phone_number, "tel:#{coach.phone_number}" %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</table>
