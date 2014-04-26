@@ -1,5 +1,5 @@
 class CoachesController < ApplicationController
   def index
-    @divisions = Division.includes(teams: [:coaches]).order('divisions.sort_order, teams.name').all
+    @divisions = Division.includes(teams: [:coaches]).references(:teams).order('divisions.sort_order, teams.name')
   end
 end

@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 ruby "2.1.1"
 
-gem 'rails', '4.0.4'
+gem 'rails', '4.1.0'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'bootstrap-sass'
 gem 'coffee-rails'
@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'pg'
 gem 'ri_cal'
 gem 'sass-rails'
+gem 'sprockets', '~> 2.11.0'
 gem 'uglifier'
 gem 'unicorn'
 
