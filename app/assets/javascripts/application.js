@@ -3,6 +3,7 @@
 //= require jquery_ui
 //= require jquery.cookie
 //= require bootstrap/collapse
+//= require bootstrap/transition
 //= require bootstrap/dropdown
 //= require notification-hider
 //= require calendar

@@ -6,7 +6,7 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <td></td>
+          <td class="hidden-phone"></td>
           <th>Time</th>
           <th>Visitor</th>
           <th>Home</th>
@@ -16,7 +16,7 @@
       <tbody>
         <% @team.games.each_with_index do |game, i| %>
           <tr class="<%= cycle("odd", "even") %>">
-            <td><%= i + 1 %></td>
+            <td class="hidden-phone"><%= i + 1 %></td>
             <td><%= game.starts_at_display %></td>
             <td><%= game.visiting_team.name %></td>
             <td><%= game.home_team.name %></td>
