@@ -60,12 +60,13 @@ describe Game do
     game.includes_local_team?.should be_true
   end
 
-  it 'should find all current games' do
-    Time.zone = ActiveSupport::TimeZone["America/Chicago"]
+  it 'should find all current games including today' do
+    game_1 = create(:game, starts_at: '03/31/2014 6pm')
+    game_2 = create(:game, starts_at: '04/01/2014 6pm')
+    game_3 = create(:game, starts_at: '04/02/2014 6pm')
 
-    game_1 = create(:game, starts_at: Time.now - 1.hour)
-    game_2 = create(:game, starts_at: Time.now + 1.hour)
-
-    Game.current.all.should == [game_2]
+    Timecop.travel(Time.local(2014, 4, 1, 23)) do
+      Game.current(Time.now).all.should == [game_2, game_3]
+    end
   end
 end
