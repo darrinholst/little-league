@@ -11,7 +11,7 @@
     <ul class="games">
       <% @games.group_by {|g| g.starts_at.strftime("%a %b %d")}.each do |date, games| %>
         <li>
-          <div class="date"><%= date %> <span class="timespan">(in <%= distance_of_time_in_words(date, Date.current) %>)</span></div>
+          <div class="date"><%= date %> <% unless date.to_date == Date.current %><span class="timespan">(in <%= distance_of_time_in_words(date, Date.current) %>)</span><% end %></div>
 
           <ul>
             <% games.each do |game| %>
