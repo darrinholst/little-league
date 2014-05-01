@@ -43,11 +43,11 @@ class Game < ActiveRecord::Base
   end
 
   def starts_at=(date)
-    parsed = Chronic.parse(date.gsub(/ 0/, " "))
+    parsed = date.respond_to?(:gsub) ? Chronic.parse(date.gsub(/ 0/, " ")) : date
     write_attribute(:starts_at, parsed.utc) if parsed
   end
 
-  scope :current, -> { where("starts_at >= ?", Date.today) }
+  scope :current, -> { where("starts_at >= ?", Time.now.utc) }
   scope :by_date, -> { order("starts_at") }
 
   private

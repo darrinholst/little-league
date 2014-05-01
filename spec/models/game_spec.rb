@@ -59,4 +59,13 @@ describe Game do
     game.visiting_team.local = true
     game.includes_local_team?.should be_true
   end
+
+  it 'should find all current games' do
+    Time.zone = ActiveSupport::TimeZone["America/Chicago"]
+
+    game_1 = create(:game, starts_at: Time.now - 1.hour)
+    game_2 = create(:game, starts_at: Time.now + 1.hour)
+
+    Game.current.all.should == [game_2]
+  end
 end
