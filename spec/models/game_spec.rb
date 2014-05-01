@@ -61,7 +61,7 @@ describe Game do
   end
 
   it 'should find all current games including today' do
-    game_1 = create(:game, starts_at: '03/31/2014 6pm')
+    game_1 = create(:game, starts_at: '03/31/2014 9pm')
     game_2 = create(:game, starts_at: '04/01/2014 6pm')
     game_3 = create(:game, starts_at: '04/02/2014 6pm')
 

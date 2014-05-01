@@ -47,7 +47,7 @@ class Game < ActiveRecord::Base
     write_attribute(:starts_at, parsed.utc) if parsed
   end
 
-  scope :current, -> (from) { where("starts_at >= ?", from.to_date) }
+  scope :current, -> (from) { where("starts_at >= ?", from.to_date.to_time) }
   scope :by_date, -> { order("starts_at") }
 
   private
