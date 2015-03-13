@@ -1,5 +1,5 @@
 class Player < ActiveRecord::Base
-  CUTOFF_DATE = Chronic.parse("04/30/2014")
+  CUTOFF_DATE = Chronic.parse("04/30/2015")
 
   belongs_to :division
   belongs_to :team
