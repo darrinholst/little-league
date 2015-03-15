@@ -3,6 +3,10 @@ ActiveAdmin.register Division do
   config.filters = false
   config.sort_order = 'sort_order_desc'
 
+  member_action :local_teams, :method => :get do
+    render json: Division.find(params[:id]).teams.local.map {|t| {id: t.id, name: t.name}}
+  end
+
   index do
     column :name do |resource| link_to resource.name, resource_path(resource) end
     actions :defaults => false do |resource|

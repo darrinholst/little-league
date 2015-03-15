@@ -21,8 +21,8 @@ ActiveAdmin.register Player do
     column 'Phone', :phone_number do |r| editable_text_column(r, :phone_number) end
     column 'Alternate Phone', :alternate_phone_number do |r| editable_text_column(r, :alternate_phone_number) end
     column 'Shirt', :shirt_size do |r| editable_text_column(r, :shirt_size) end
-    column :division, sortable: 'divisions.sort_order'
-    column :team
+    column :division, sortable: 'divisions.sort_order' do |r| editable_select(r, :division_id, admin_divisions_path, (r.division.name rescue '')) end
+    column :team do |r| editable_select(r, :team_id, local_teams_admin_division_path(r.division.id), (r.team.name rescue '')) end
     default_actions
   end
 
