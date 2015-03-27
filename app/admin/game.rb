@@ -39,16 +39,16 @@ ActiveAdmin.register Game do
     f.semantic_errors
 
     f.inputs do
-      f.input :visiting_team
-      f.input :home_team
+      f.input :visiting_team, group_by: :division
+      f.input :home_team, group_by: :division
       f.input :field
       f.input :starts_at, as: :string, input_html: {value: f.object.starts_at_form}
-      f.input :home_team_concessions_1, label: 'Home Concessions 1', collection: f.object.home_team.concessionable_players
-      f.input :home_team_concessions_2, label: 'Home Concessions 2', collection: f.object.home_team.concessionable_players
-      f.input :visiting_team_concessions_1, label: 'Visitors Concessions 1', collection: f.object.visiting_team.concessionable_players
-      f.input :visiting_team_concessions_2, label: 'Visitors Concessions 2', collection: f.object.visiting_team.concessionable_players
-      f.input :home_plate_umpire, label: 'Home Plate', collection: f.object.home_team.concessionable_players
-      f.input :base_umpire, label: 'Base', collection: f.object.home_team.concessionable_players
+      f.input :home_team_concessions_1, label: 'Home Concessions 1', collection: f.object.home_team.concessionable_players if f.object.home_team
+      f.input :home_team_concessions_2, label: 'Home Concessions 2', collection: f.object.home_team.concessionable_players if f.object.home_team
+      f.input :visiting_team_concessions_1, label: 'Visitors Concessions 1', collection: f.object.visiting_team.concessionable_players if f.object.visiting_team
+      f.input :visiting_team_concessions_2, label: 'Visitors Concessions 2', collection: f.object.visiting_team.concessionable_players if f.object.visiting_team
+      f.input :home_plate_umpire, label: 'Home Plate', collection: f.object.home_team.concessionable_players if f.object.home_team
+      f.input :base_umpire, label: 'Base', collection: f.object.home_team.concessionable_players if f.object.home_team
     end
 
     f.actions
