@@ -10,6 +10,13 @@ ActiveAdmin.register Player do
     end
   end
 
+  csv do
+    column :name
+    column :shirt_size
+    column (:division) {|player| player.division.name if player.division}
+    column (:team) {|player| player.team.name if player.team}
+  end
+
   index do |t|
     i = 0
     column '' do |r| i += 1 end
