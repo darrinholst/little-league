@@ -55,7 +55,7 @@ ActiveAdmin.register Game do
   end
 
   csv do
-    column('Time') {|g| g.starts_at_display}
+    column('Time') {|g| g.starts_at}
     column('Division') {|g| g.home_team.division.name}
     column('Field') {|g| g.field.name}
     column('Visiting Team') {|g| g.visiting_team.name}
