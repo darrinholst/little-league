@@ -52,6 +52,9 @@
 
     <div class="container public" id="app">
       <div class="notice"><%= notice %></div>
+      <% if motd %>
+        <div class="motd alert alert-success"><%= motd %></div>
+      <% end %>
       <%= yield %>
     </div>
 

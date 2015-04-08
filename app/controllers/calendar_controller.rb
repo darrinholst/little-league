@@ -16,6 +16,14 @@ class CalendarController < ApplicationController
         :in_town => game.in_town?
       }
     end
+
+    @games << {
+      title: 'Opening Ceremonies',
+      start: Chronic.parse('04/18 2pm').iso8601,
+      allDay: false,
+      color: '#0f389e',
+      in_town: true
+    }
   end
 
   def ical

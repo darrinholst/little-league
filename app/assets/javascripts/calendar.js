@@ -25,7 +25,7 @@
           element.hide()
         }
 
-        if($.inArray(event.division, displayedDivisions) < 0) {
+        if(event.division && $.inArray(event.division, displayedDivisions) < 0) {
           element.hide()
         }
       }
