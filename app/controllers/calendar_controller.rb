@@ -19,7 +19,7 @@ class CalendarController < ApplicationController
 
     @games << {
       title: 'Opening Ceremonies',
-      start: Chronic.parse('04/18 2pm').iso8601,
+      start: Chronic.parse('04/18/2015 2pm').iso8601,
       allDay: false,
       color: '#0f389e',
       in_town: true
