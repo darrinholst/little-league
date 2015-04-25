@@ -11,10 +11,11 @@ ActiveAdmin.register Player do
   end
 
   csv do
-    column :name
-    column :shirt_size
     column (:division) {|player| player.division.name if player.division}
     column (:team) {|player| player.team.name if player.team}
+    column('First Name') {|p| p.first_name}
+    column('Last Name') {|p| p.last_name}
+    column('Birthdate') {|p| p.birthdate_display}
   end
 
   index do |t|
