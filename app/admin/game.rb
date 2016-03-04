@@ -23,7 +23,7 @@ ActiveAdmin.register Game do
     column 'V Concessions' do |g| editable_select(g, :visiting_team_concessions_2_id, concessionable_players_admin_team_path(g.visiting_team), (g.visiting_team_concessions_2.name rescue '')) end
     column 'Plate Ump' do |g| editable_select(g, :home_plate_umpire_id, concessionable_players_admin_team_path(g.home_team), (g.home_plate_umpire.name rescue '')) end
     column 'Base Ump' do |g| editable_select(g, :base_umpire_id, concessionable_players_admin_team_path(g.home_team), (g.base_umpire.name rescue '')) end
-    default_actions
+    actions
   end
 
   filter :visiting_team_id_or_home_team_id, as: :select, collection: Team.includes(:division).local.order('divisions.sort_order desc, teams.name'), label: 'Team'

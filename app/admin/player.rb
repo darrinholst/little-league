@@ -31,7 +31,7 @@ ActiveAdmin.register Player do
     column 'Shirt', :shirt_size do |r| editable_text_column(r, :shirt_size) end
     column :division, sortable: 'divisions.sort_order' do |r| editable_select(r, :division_id, admin_divisions_path, (r.division.name rescue '')) end
     column :team do |r| editable_select(r, :team_id, local_teams_admin_division_path(r.division.id), (r.team.name rescue '')) end
-    default_actions
+    actions
   end
 
   filter :division

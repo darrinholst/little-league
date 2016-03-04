@@ -20,7 +20,7 @@ ActiveAdmin.register Coach do
     column 'Last'     , :last_name     , sortable: 'last_name'            do |r| editable_text_column(r, :last_name) end
     column 'Email'    , :email_address , sortable: 'email_address'        do |r| editable_text_column(r, :email_address) end
     column 'Phone'    , :phone_number  , sortable: 'phone_number'         do |r| editable_text_column(r, :phone_number) end
-    default_actions
+    actions
   end
 
   filter :division
