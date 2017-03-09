@@ -1,5 +1,5 @@
 ActiveAdmin.register Coach do
-  permit_params :first_name, :last_name, :phone_number, :email_address, :division_id, :team_id, :head
+  permit_params :first_name, :last_name, :phone_number, :email_address, :division_id, :team_id, :head, :address, :city, :state, :zip
   actions :index, :new, :create, :update, :edit, :destroy
 
   # allows us to initially use the multiple column sort order below
@@ -20,6 +20,10 @@ ActiveAdmin.register Coach do
     column 'Last'     , :last_name     , sortable: 'last_name'            do |r| editable_text_column(r, :last_name) end
     column 'Email'    , :email_address , sortable: 'email_address'        do |r| editable_text_column(r, :email_address) end
     column 'Phone'    , :phone_number  , sortable: 'phone_number'         do |r| editable_text_column(r, :phone_number) end
+    column 'Address', :address do |r| editable_text_column(r, :address) end
+    column 'City', :city do |r| editable_text_column(r, :city) end
+    column 'State', :state do |r| editable_text_column(r, :state) end
+    column 'Zip', :state do |r| editable_text_column(r, :zip) end
     actions
   end
 
@@ -31,8 +35,12 @@ ActiveAdmin.register Coach do
       f.input :team, :as => :select, :collection => option_groups_from_collection_for_select(Division.all, :teams, :name, :id, :name, f.object.team.try(:id))
       f.input :first_name
       f.input :last_name
-      f.input :phone_number
       f.input :email_address
+      f.input :phone_number
+      f.input :address
+      f.input :city
+      f.input :state
+      f.input :zip
       f.input :head
     end
 

@@ -8,5 +8,20 @@ class Division < ActiveRecord::Base
   def self.name_matches(q)
     where(arel_table[:name].matches(q)).first
   end
+
+  def number
+    case name
+      when 'T-Ball'
+        11
+      when 'Rookies'
+        12
+      when 'Minors'
+        12
+      when 'Majors'
+        13
+      when 'Juniors'
+        17
+    end
+  end
 end
 

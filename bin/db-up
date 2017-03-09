@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+PORT=5455
+CONTAINER_NAME="little-league-pg";
+DB_LOG=tmp/db.log
+
+function create_pg_data {
+  docker run -v /var/lib/postgresql -v /run/postgresql --name=${CONTAINER_NAME}-data busybox true &> ${DB_LOG} &> ${DB_LOG}
+}
+
+function has_postgres_image {
+  docker images postgres | grep -c 9\.5 > ${DB_LOG}
+}
+
+function pull_postgres_image {
+  echo "pulling the postgres image, this will take a couple minutes..."
+  docker pull postgres:9.5
+}
+
+function create_pg {
+  create_pg_data
+  has_postgres_image || pull_postgres_image
+
+  docker run \
+    -d \
+    -p ${PORT}:5432 \
+    -e POSTGRES_USER="admin" \
+    -e POSTGRES_PASSWORD="password" \
+    --volumes-from ${CONTAINER_NAME}-data \
+    --name=${CONTAINER_NAME} \
+    postgres:9.5 \
+    2> ${DB_LOG}
+}
+
+function start_pg {
+  docker start ${CONTAINER_NAME} > ${DB_LOG}
+}
+
+mkdir tmp
+echo "" > ${DB_LOG}
+create_pg
+start_pg

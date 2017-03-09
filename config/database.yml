@@ -1,7 +1,10 @@
 development:
   adapter: postgresql
-  database: little-league-development
   host: localhost
+  database: little-league-development
+  username: <%= ENV['DATABASE_USERNAME'] || 'postgres' %>
+  password: <%= ENV['DATABASE_PASSWORD'] || 'password' %>
+  port: <%= ENV['DATABASE_PORT'] || 5432 %>
   encoding: unicode
   pool: 5
   timeout: 5000
