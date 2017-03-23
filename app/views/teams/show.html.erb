@@ -14,6 +14,7 @@
         </tr>
       </thead>
       <tbody>
+        <% if ENV['GAMES_PUBLIC'] %>
         <% @team.games.each_with_index do |game, i| %>
           <tr class="<%= cycle("odd", "even") %>">
             <td class="hidden-phone"><%= i + 1 %></td>
@@ -22,6 +23,7 @@
             <td><%= game.home_team.name %></td>
             <td><%= game.field_name %></td>
           </tr>
+        <% end %>
         <% end %>
       </tbody>
     </table>

@@ -24,6 +24,8 @@ class CalendarController < ApplicationController
       color: '#0f389e',
       in_town: true
     }
+
+    @games = [] unless ENV['GAMES_PUBLIC']
   end
 
   def ical

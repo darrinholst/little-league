@@ -222,9 +222,3 @@ DEPENDENCIES
   timecop
   uglifier
   unicorn
-
-RUBY VERSION
-   ruby 2.2.1p85
-
-BUNDLED WITH
-   1.14.6
