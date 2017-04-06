@@ -32,7 +32,7 @@ class CalendarController < ApplicationController
     team = Team.find(params[:team_id])
 
     calendar = RiCal.Calendar do |cal|
-      cal.add_x_property 'X-WR-CALNAME', "2014 #{team.name} Baseball"
+      cal.add_x_property 'X-WR-CALNAME', "#{ENV['SEASON'] || '2017'} #{team.name} Baseball"
 
       team.games.each do |game|
         cal.event do |event|
