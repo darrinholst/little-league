@@ -11,7 +11,7 @@ task :distribute => :environment do
       division = nil
 
       case player.age
-        when 5, 6
+        when 4, 5, 6
           division = tball
         when 7, 8
           division = rookies
@@ -19,7 +19,7 @@ task :distribute => :environment do
           division = minors
         when 11, 12
           division = majors
-        when 13, 14
+        when 13, 14, 15
           division = juniors
       end
 
