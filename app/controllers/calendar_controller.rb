@@ -2,7 +2,7 @@ class CalendarController < ApplicationController
   def home
     @games = Game.includes([{:home_team => :division}, :visiting_team]).order("divisions.name")
 
-    if(params[:start] && params[:end])
+    if (params[:start] && params[:end])
       @games = @games.where(['starts_at >= ? and starts_at <= ?', Time.at(params[:start].to_i), Time.at(params[:end].to_i)])
     end
 
@@ -25,7 +25,7 @@ class CalendarController < ApplicationController
       in_town: true
     }
 
-    @games = [] unless ENV['GAMES_PUBLIC']
+    @games = [] unless ENV['GAMES_PUBLIC'] || (current_user && current_user.admin?)
   end
 
   def ical
@@ -47,4 +47,3 @@ class CalendarController < ApplicationController
     render :text => calendar.export
   end
 end
-

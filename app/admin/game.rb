@@ -26,21 +26,16 @@ ActiveAdmin.register Game do
     actions
   end
 
+  filter :home_team_division_id, as: :select, collection: Division.all, label: 'Division'
   filter :visiting_team_id_or_home_team_id, as: :select, collection: Team.includes(:division).local.order('divisions.sort_order desc, teams.name'), label: 'Team'
   filter :home_team_local, as: :boolean, label: 'In Perry?'
-
-  before_filter :only => [:index] do
-    if request.format.html? && params['commit'].blank?
-       params['q'] = {:home_team_local_eq => '1'}
-    end
-  end
 
   form do |f|
     f.semantic_errors
 
     f.inputs do
-      f.input :visiting_team, group_by: :division
-      f.input :home_team, group_by: :division
+      f.input :visiting_team, :as => :select, :collection => option_groups_from_collection_for_select(Division.all, :teams, :name, :id, :name, f.object.visiting_team_id)
+      f.input :home_team, :as => :select, :collection => option_groups_from_collection_for_select(Division.all, :teams, :name, :id, :name, f.object.home_team_id)
       f.input :field
       f.input :starts_at, as: :string, input_html: {value: f.object.starts_at_form}
       f.input :home_team_concessions_1, label: 'Home Concessions 1', collection: f.object.home_team.concessionable_players if f.object.home_team
