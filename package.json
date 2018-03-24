@@ -1,0 +1,14 @@
+{
+  "name": "littleleague",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "prettier": "^1.11.1"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "singleQuote": true,
+    "bracketSpacing": false
+  }
+}

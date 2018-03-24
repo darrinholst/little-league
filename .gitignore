@@ -4,3 +4,4 @@ log/*.log
 tmp/
 .Gemfile.lock
 .db_schema.rb
+node_modules

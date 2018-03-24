@@ -1,14 +1,8 @@
 //=require fullcalendar.min
 
 (function() {
-  if($("#calendar").length) {
+  if ($('#calendar').length) {
     var displayedDivisions = [];
-
-    var setDisplayedDivisions = function() {
-      displayedDivisions = $(".filters li.on a").map(function(index, element) {return $(element).html()});
-    }
-
-    setDisplayedDivisions();
 
     var calendar = $('#calendar').fullCalendar({
       events: 'calendar/home',
@@ -20,25 +14,44 @@
         right: 'month,agendaWeek,agendaDay'
       },
 
-      eventRender: function(event, element) {
-        if($("#home-only").prop("checked") && !event.in_town) {
-          element.hide()
-        }
-
-        if(event.division && $.inArray(event.division, displayedDivisions) < 0) {
-          element.hide()
-        }
-      }
-    })
-
-    $("#home-only").change(function() {
-      calendar.fullCalendar("rerenderEvents");
+      eventRender: eventRender,
+      eventClick: eventClick
     });
 
-    $(".filters li").click(function() {
-      $(this).toggleClass("on").toggleClass("off");
+    $('#home-only').change(function() {
+      calendar.fullCalendar('rerenderEvents');
+    });
+
+    $('.filters li').click(function() {
+      $(this)
+        .toggleClass('on')
+        .toggleClass('off');
       setDisplayedDivisions();
-      calendar.fullCalendar("rerenderEvents");
+      calendar.fullCalendar('rerenderEvents');
     });
+
+    function eventRender(event, element) {
+      if ($('#home-only').prop('checked') && !event.in_town) {
+        element.hide();
+      }
+
+      if (event.division && $.inArray(event.division, displayedDivisions) < 0) {
+        element.hide();
+      }
+    }
+
+    function eventClick(event) {
+      if (event.on_click) {
+        window.open(event.on_click, '_blank');
+      }
+    }
+
+    function setDisplayedDivisions() {
+      displayedDivisions = $('.filters li.on a').map(function(index, element) {
+        return $(element).html();
+      });
+    }
+
+    setDisplayedDivisions();
   }
 })();

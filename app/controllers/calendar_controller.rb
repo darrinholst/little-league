@@ -13,7 +13,8 @@ class CalendarController < ApplicationController
         :allDay => false,
         :color => game.division_color,
         :division => game.division_name,
-        :in_town => game.in_town?
+        :in_town => game.in_town?,
+        :on_click => current_user && current_user.admin? && edit_admin_game_url(game)
       }
     end
 
