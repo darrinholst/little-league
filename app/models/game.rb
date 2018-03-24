@@ -49,6 +49,7 @@ class Game < ActiveRecord::Base
 
   scope :current, -> (from) { where("starts_at >= ?", from.to_date.to_time) }
   scope :by_date, -> { order("starts_at") }
+  scope :local, -> { joins(:field).where('fields.local = ?', true) }
 
   private
 

@@ -1,6 +1,6 @@
 class CalendarController < ApplicationController
   def home
-    @games = Game.includes([{:home_team => :division}, :visiting_team]).order("divisions.name")
+    @games = Game.includes([:field, {:home_team => :division}, :visiting_team]).order("divisions.name")
 
     if (params[:start] && params[:end])
       @games = @games.where(['starts_at >= ? and starts_at <= ?', Time.at(params[:start].to_i), Time.at(params[:end].to_i)])
@@ -30,11 +30,22 @@ class CalendarController < ApplicationController
 
   def ical
     team = Team.find(params[:team_id])
+    name =  "#{team.name} Baseball"
+    render :text => build_calendar(team.games, name)
+  end
 
-    calendar = RiCal.Calendar do |cal|
-      cal.add_x_property 'X-WR-CALNAME', "#{ENV['SEASON'] || '2017'} #{team.name} Baseball"
+  def local_ical
+    games = Game.local.includes(:field, :home_team, :visiting_team)
+    render :text => build_calendar(games, 'Perry Little League Baseball')
+  end
 
-      team.games.each do |game|
+  private
+
+  def build_calendar(games, name)
+    RiCal.Calendar do |cal|
+      cal.add_x_property 'X-WR-CALNAME', name
+
+      games.each do |game|
         cal.event do |event|
           event.summary "#{game.visiting_team.name} at #{game.home_team.name}"
           event.dtstart game.starts_at
@@ -42,8 +53,6 @@ class CalendarController < ApplicationController
           event.location "#{game.field.name} Field"
         end
       end
-    end
-
-    render :text => calendar.export
+    end.export
   end
 end
