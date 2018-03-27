@@ -40,8 +40,8 @@ ActiveAdmin.register Team do
 
     br
 
-    h3 'Players'
-    table_for resource.players.youngest_first, class: 'index_table' do
+    h3 'Players', class: 'dont-print'
+    table_for resource.players.youngest_first, class: 'dont-print index_table' do
       i = 0
       column '' do |r| i += 1 end
       column :name do |player| link_to player.name, edit_admin_player_path(player) end

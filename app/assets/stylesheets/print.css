@@ -20,3 +20,7 @@ td, th {
 table {
   border-collapse: collapse;
 }
+
+.active_admin a {
+  display: inline;
+}
