@@ -4,7 +4,7 @@ ActiveAdmin.register Team do
 
   before_filter :only => [:index] do
     if request.format.html? && params['commit'].blank?
-       params['q'] = {:local_eq => '1'}
+      params['q'] = {:local_eq => '1'}
     end
   end
 
@@ -65,12 +65,9 @@ ActiveAdmin.register Team do
       column :visiting_team
       column :home_team
       column :field
-      column :starts_at
+      column :starts_at do |g| g.starts_at.strftime("%b %e %l:%M %p") end
       column 'H Concessions' do |g| editable_select(g, :home_team_concessions_1_id, concessionable_players_admin_team_path(g.home_team), (g.home_team_concessions_1.name rescue '')) if g.home_team == resource end
-      column 'H Concessions' do |g| editable_select(g, :home_team_concessions_2_id, concessionable_players_admin_team_path(g.home_team), (g.home_team_concessions_2.name rescue '')) if g.home_team == resource end
       column 'V Concessions' do |g| editable_select(g, :visiting_team_concessions_1_id, concessionable_players_admin_team_path(g.visiting_team), (g.visiting_team_concessions_1.name rescue '')) if g.visiting_team == resource end
-      column 'V Concessions' do |g| editable_select(g, :visiting_team_concessions_2_id, concessionable_players_admin_team_path(g.visiting_team), (g.visiting_team_concessions_2.name rescue '')) if g.visiting_team == resource end
-      column 'Plate Ump' do |g| editable_select(g, :home_plate_umpire_id, concessionable_players_admin_team_path(g.home_team), (g.home_plate_umpire.name rescue '')) if g.home_team == resource end
       column 'Base Ump' do |g| editable_select(g, :base_umpire_id, concessionable_players_admin_team_path(g.home_team), (g.base_umpire.name rescue '')) if g.home_team == resource end
     end
   end
