@@ -12,6 +12,32 @@ ActiveAdmin.register Coach do
     end
   end
 
+  csv do
+    column('League ID') {'1150330'}
+    column('Division') {|c| c.division.number if c.division}
+    column('Team Name') {|c| c.team.name if c.team}
+    column('Role') {|c| 'C'}
+    column('First Name') {|c| c.first_name}
+    column('Last Name') {|c| c.last_name}
+    column('Address Line 1') {|c| c.address}
+    column('Address Line 2') {''}
+    column('City') {|c| c.city}
+    column('State') {|c| c.state}
+    column('Zip') {|c| c.zip}
+    column('Country') {'US'}
+    column('Birthdate') {''}
+    column('Non-Player Email') {''}
+    column('Non-Player Phone') {''}
+    column('Parent 1 First Name') {''}
+    column('Parent 1 Last Name') {''}
+    column('Parent 1 Email') {''}
+    column('Parent 1 Phone,') {''}
+    column('Parent 2 First Name') {''}
+    column('Parent 2 Last Name') {''}
+    column('Parent 2 Email') {''}
+    column('Parent 2 Phone') {''}
+  end
+
   index do
     selectable_column
     column 'Division' , :division      , sortable: 'divisions.sort_order' do |r| r.division_name end

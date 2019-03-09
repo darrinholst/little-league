@@ -11,19 +11,29 @@ ActiveAdmin.register Player do
   end
 
   csv do
-    column (:division) {|player| player.division.name if player.division}
-    column ('Division #') {|player| player.division.number if player.division}
-    column (:team) {|player| player.team.name if player.team}
-    column ('Role') {|player| 'B'}
+    column('League ID') {'1150330'}
+    column('Division') {|player| player.division.number if player.division}
+    column('Team Name') {|player| player.team.name if player.team}
+    column('Role') {|player| 'B'}
     column('First Name') {|p| p.first_name}
     column('Last Name') {|p| p.last_name}
-    column('Address 1') {|p| p.address}
-    column('Address 2') {''}
+    column('Address Line 1') {|p| p.address}
+    column('Address Line 2') {''}
     column('City') {|p| p.city}
     column('State') {|p| p.state}
     column('Zip') {|p| p.zip}
     column('Country') {'US'}
     column('Birthdate') {|p| p.birthdate_display}
+    column('Non-Player Email') {''}
+    column('Non-Player Phone') {''}
+    column('Parent 1 First Name') {''}
+    column('Parent 1 Last Name') {''}
+    column('Parent 1 Email') {''}
+    column('Parent 1 Phone,') {''}
+    column('Parent 2 First Name') {''}
+    column('Parent 2 Last Name') {''}
+    column('Parent 2 Email') {''}
+    column('Parent 2 Phone') {''}
   end
 
   index do |t|
