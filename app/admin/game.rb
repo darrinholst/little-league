@@ -13,6 +13,7 @@ ActiveAdmin.register Game do
   end
 
   index do
+    selectable_column
     column :visiting_team
     column :home_team
     column :field do |r| r.field.name end
