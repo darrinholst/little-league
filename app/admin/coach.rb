@@ -13,6 +13,7 @@ ActiveAdmin.register Coach do
   end
 
   index do
+    selectable_column
     column 'Division' , :division      , sortable: 'divisions.sort_order' do |r| r.division_name end
     column 'Team'     , :team          , sortable: 'teams.name'
     column ''         , :head          , sortable: false                  do |r| r.head? ? '*' : '' end

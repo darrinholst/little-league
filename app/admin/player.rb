@@ -28,6 +28,7 @@ ActiveAdmin.register Player do
 
   index do |t|
     i = 0
+    selectable_column
     column '' do |r| i += 1 end
     column 'First', :first_name, sortable: 'first_name' do |r| editable_text_column(r, :first_name) end
     column 'Last', :last_name, sortable: 'last_name' do |r| editable_text_column(r, :last_name) end
