@@ -2,12 +2,6 @@ ActiveAdmin.register Team do
   permit_params :name, :division_id, :local
   config.sort_order = '!'
 
-  before_filter :only => [:index] do
-    if request.format.html? && params['commit'].blank?
-      params['q'] = {:local_eq => '1'}
-    end
-  end
-
   member_action :concessionable_players, :method => :get do
     render json: Team.find(params[:id]).concessionable_players.map {|p| {id: p.id, name: p.name}}
   end
