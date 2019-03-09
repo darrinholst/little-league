@@ -23,7 +23,7 @@ task :distribute => :environment do
           division = juniors
       end
 
-      player.update_attributes!(:division_id => division.id) if division
+      player.update_attributes!(division_id: division.id, team_id: nil) if division
     end
   end
 end
