@@ -13,6 +13,7 @@ ActiveAdmin.register Team do
   end
 
   index do
+    selectable_column
     column :division, sortable: 'divisions.sort_order'
     column :name do |resource| link_to resource.name, resource_path(resource) end
     column :local
