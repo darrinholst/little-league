@@ -1,0 +1,12 @@
+<% strip_punctuation ||= false %>
+<% if target.errors.any? %>
+  <div class="validation-errors">
+    <ul>
+      <% target.errors.full_messages.each do |msg| %>
+        <li><%= strip_punctuation ? msg.gsub(/[^A-Za-z0-9\s]/i, ''): msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
