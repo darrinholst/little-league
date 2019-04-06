@@ -60,4 +60,24 @@ ActiveAdmin.register Game do
     column('Home Plate') {|g| g.home_plate_umpire.name rescue ''}
     column('Base') {|g| g.base_umpire.name rescue ''}
   end
+
+  action_item :import, :only => :index do
+    link_to 'Import', :action => 'upload'
+  end
+
+  collection_action :upload, :method => :get do
+    @import = Admin::GameImport.new
+    render 'admin/game/upload'
+  end
+
+  collection_action :import, :method => :post do
+    @import = Admin::GameImport.new(params)
+
+    if @import.valid?
+      games = @import.execute
+      redirect_to :action => :index, :notice => "#{games.size} imported"
+    else
+      render 'admin/game/upload'
+    end
+  end
 end

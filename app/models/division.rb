@@ -5,6 +5,8 @@ class Division < ActiveRecord::Base
 
   validates_presence_of :name
 
+  scope :ordered, -> { order('sort_order') }
+
   def self.name_matches(q)
     where(arel_table[:name].matches(q)).first
   end

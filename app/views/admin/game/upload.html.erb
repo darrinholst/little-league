@@ -1,0 +1,42 @@
+<%= form_tag(import_admin_games_path) %>
+  <div class="form-group">
+    <%= label_tag :division_id, "Division:" %>
+    <%= select_tag :division_id, options_from_collection_for_select(Division.ordered.all, "id", "name"), include_blank: true %>
+  </div>
+  <div class="form-group textarea-with-example">
+    <div>
+      <%= label_tag :csv, "CSV:" %>
+      <textarea name="csv" rows="20"><%= @import.csv %></textarea>
+    </div>
+    <div>
+      <label>Example CSV:</label>
+      <pre>
+        4/22 6:00 PM , Perry Mets    , Perry Dodgers , Perry Major
+        4/25 6:00 PM , Perry Dodgers , Granger 1     , Granger
+        4/25 6:00 PM , Granger 2     , Perry Mets    , Perry Major
+        4/29 6:00 PM , Perry Mets    , Granger 2     , Granger
+        4/29 6:00 PM , Granger 1     , Perry Dodgers , Perry Major
+        5/2 6:00 PM  , Perry Dodgers , Perry Mets    , Perry Major
+        5/6 6:00 PM  , Perry Dodgers , Granger 2     , Granger
+        5/6 6:00 PM  , Granger 1     , Perry Mets    , Perry Major
+        5/9 6:00 PM  , Perry Mets    , Granger 1     , Granger
+        5/9 6:00 PM  , Granger 2     , Perry Dodgers , Perry Major
+        5/13 6:00 PM , Perry Mets    , Perry Dodgers , Perry Major
+        5/16 6:00 PM , Perry Dodgers , Granger 1     , Granger
+        5/16 6:00 PM , Granger 2     , Perry Mets    , Perry Major
+        5/20 6:00 PM , Perry Mets    , Granger 2     , Granger
+        5/20 6:00 PM , Granger 1     , Perry Dodgers , Perry Major
+        5/23 6:00 PM , Perry Dodgers , Perry Mets    , Perry Major
+        5/30 6:00 PM , Perry Dodgers , Granger 2     , Granger
+        5/30 6:00 PM , Granger 1     , Perry Mets    , Perry Major
+        6/3 6:00 PM  , Perry Mets    , Granger 1     , Granger
+        6/3 6:00 PM  , Granger 2     , Perry Dodgers , Perry Major
+      </pre>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="submit" value="Import"> or
+    <%= link_to 'cancel', admin_games_path %>
+  </div>
+</form>
+
